@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 8 章 探索性数据分析 | Stata for Data Science</title>
+  <meta name="description" content="Stata 数据科学" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 8 章 探索性数据分析 | Stata for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Stata 数据科学" />
+  <meta name="github-repo" content="czxa/stata4ds" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 8 章 探索性数据分析 | Stata for Data Science" />
+  
+  <meta name="twitter:description" content="Stata 数据科学" />
+  
+
+<meta name="author" content="程振兴" />
+
+
+<meta name="date" content="2019-08-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-41.html">
+
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stata for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 前言</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#r--stata"><i class="fa fa-check"></i><b>1.1</b> 从 R 到 Stata</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stata--r"><i class="fa fa-check"></i><b>1.2</b> 从 Stata 到 R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#section-1"><i class="fa fa-check"></i><b>1.3</b> 本书内容</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#section-2"><i class="fa fa-check"></i><b>1.4</b> 阅读本书之前的准备工作</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#section-3"><i class="fa fa-check"></i><b>1.5</b> 目标读者</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#section-4"><i class="fa fa-check"></i><b>1.6</b> 排版约定</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#section-5"><i class="fa fa-check"></i><b>1.7</b> 下载示例代码</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#section-6"><i class="fa fa-check"></i><b>1.8</b> 许可证</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#section-7"><i class="fa fa-check"></i><b>1.9</b> 读者反馈</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="section-8.html"><a href="section-8.html"><i class="fa fa-check"></i><b>2</b> 导论</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-8.html"><a href="section-8.html#section-9"><i class="fa fa-check"></i><b>2.1</b> 准备工作</a></li>
+<li class="chapter" data-level="2.2" data-path="section-8.html"><a href="section-8.html#stata4ds-"><i class="fa fa-check"></i><b>2.2</b> stata4ds 命令包</a></li>
+<li class="chapter" data-level="2.3" data-path="section-8.html"><a href="section-8.html#stata-"><i class="fa fa-check"></i><b>2.3</b> 运行 Stata 代码</a></li>
+<li class="chapter" data-level="2.4" data-path="section-8.html"><a href="section-8.html#section-10"><i class="fa fa-check"></i><b>2.4</b> 获取帮助</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="stata-1.html"><a href="stata-1.html"><i class="fa fa-check"></i><b>3</b> Stata 基础操作</a><ul>
+<li class="chapter" data-level="3.1" data-path="stata-1.html"><a href="stata-1.html#stata--2"><i class="fa fa-check"></i><b>3.1</b> Stata 是什么？</a></li>
+<li class="chapter" data-level="3.2" data-path="stata-1.html"><a href="stata-1.html#stata--3"><i class="fa fa-check"></i><b>3.2</b> Stata 能做什么？</a></li>
+<li class="chapter" data-level="3.3" data-path="stata-1.html"><a href="stata-1.html#stata--4"><i class="fa fa-check"></i><b>3.3</b> Stata 基本操作</a></li>
+<li class="chapter" data-level="3.4" data-path="stata-1.html"><a href="stata-1.html#section-15"><i class="fa fa-check"></i><b>3.4</b> 数据处理</a></li>
+<li class="chapter" data-level="3.5" data-path="stata-1.html"><a href="stata-1.html#section-16"><i class="fa fa-check"></i><b>3.5</b> 数据导出</a></li>
+<li class="chapter" data-level="3.6" data-path="stata-1.html"><a href="stata-1.html#section-17"><i class="fa fa-check"></i><b>3.6</b> 绘图</a></li>
+<li class="chapter" data-level="3.7" data-path="stata-1.html"><a href="stata-1.html#section-18"><i class="fa fa-check"></i><b>3.7</b> 统计相关</a></li>
+<li class="chapter" data-level="3.8" data-path="stata-1.html"><a href="stata-1.html#t"><i class="fa fa-check"></i><b>3.8</b> t检验、方差分析和因子分析</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-23.html"><a href="section-23.html"><i class="fa fa-check"></i><b>4</b> 探索性分析</a><ul>
+<li class="chapter" data-level="4.1" data-path="section-23.html"><a href="section-23.html#section-24"><i class="fa fa-check"></i><b>4.1</b> 导论</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="section-25.html"><a href="section-25.html"><i class="fa fa-check"></i><b>5</b> 数据可视化</a><ul>
+<li class="chapter" data-level="5.1" data-path="section-25.html"><a href="section-25.html#section-26"><i class="fa fa-check"></i><b>5.1</b> 导论</a></li>
+<li class="chapter" data-level="5.2" data-path="section-25.html"><a href="section-25.html#section-27"><i class="fa fa-check"></i><b>5.2</b> 准备工作</a></li>
+<li class="chapter" data-level="5.3" data-path="section-25.html"><a href="section-25.html#section-28"><i class="fa fa-check"></i><b>5.3</b> 第一步</a></li>
+<li class="chapter" data-level="5.4" data-path="section-25.html"><a href="section-25.html#section-31"><i class="fa fa-check"></i><b>5.4</b> 散点图进阶</a></li>
+<li class="chapter" data-level="5.5" data-path="section-25.html"><a href="section-25.html#section-32"><i class="fa fa-check"></i><b>5.5</b> 分面</a></li>
+<li class="chapter" data-level="5.6" data-path="section-25.html"><a href="section-25.html#section-33"><i class="fa fa-check"></i><b>5.6</b> 几何对象</a></li>
+<li class="chapter" data-level="5.7" data-path="section-25.html"><a href="section-25.html#section-34"><i class="fa fa-check"></i><b>5.7</b> 统计变换</a></li>
+<li class="chapter" data-level="5.8" data-path="section-25.html"><a href="section-25.html#section-35"><i class="fa fa-check"></i><b>5.8</b> 位置调整</a></li>
+<li class="chapter" data-level="5.9" data-path="section-25.html"><a href="section-25.html#section-36"><i class="fa fa-check"></i><b>5.9</b> 坐标系统</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-37.html"><a href="section-37.html"><i class="fa fa-check"></i><b>6</b> 工作流程：基础</a><ul>
+<li class="chapter" data-level="6.1" data-path="section-37.html"><a href="section-37.html#section-38"><i class="fa fa-check"></i><b>6.1</b> 编程的基础知识</a></li>
+<li class="chapter" data-level="6.2" data-path="section-37.html"><a href="section-37.html#stata--6"><i class="fa fa-check"></i><b>6.2</b> Stata 的变量名</a></li>
+<li class="chapter" data-level="6.3" data-path="section-37.html"><a href="section-37.html#section-39"><i class="fa fa-check"></i><b>6.3</b> 调用函数</a></li>
+<li class="chapter" data-level="6.4" data-path="section-37.html"><a href="section-37.html#section-40"><i class="fa fa-check"></i><b>6.4</b> 实践</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="section-41.html"><a href="section-41.html"><i class="fa fa-check"></i><b>7</b> 数据变形</a><ul>
+<li class="chapter" data-level="7.1" data-path="section-41.html"><a href="section-41.html#nycflights13-"><i class="fa fa-check"></i><b>7.1</b> nycflights13 数据集</a></li>
+<li class="chapter" data-level="7.2" data-path="section-41.html"><a href="section-41.html#section-42"><i class="fa fa-check"></i><b>7.2</b> 筛选</a></li>
+<li class="chapter" data-level="7.3" data-path="section-41.html"><a href="section-41.html#section-43"><i class="fa fa-check"></i><b>7.3</b> 缺失值</a></li>
+<li class="chapter" data-level="7.4" data-path="section-41.html"><a href="section-41.html#section-44"><i class="fa fa-check"></i><b>7.4</b> 排列</a></li>
+<li class="chapter" data-level="7.5" data-path="section-41.html"><a href="section-41.html#section-47"><i class="fa fa-check"></i><b>7.5</b> 选择</a></li>
+<li class="chapter" data-level="7.6" data-path="section-41.html"><a href="section-41.html#section-48"><i class="fa fa-check"></i><b>7.6</b> 变量重命名</a></li>
+<li class="chapter" data-level="7.7" data-path="section-41.html"><a href="section-41.html#section-49"><i class="fa fa-check"></i><b>7.7</b> 生成新的变量</a></li>
+<li class="chapter" data-level="7.8" data-path="section-41.html"><a href="section-41.html#section-50"><i class="fa fa-check"></i><b>7.8</b> 分组汇总</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="section-56.html"><a href="section-56.html"><i class="fa fa-check"></i><b>8</b> 探索性数据分析</a><ul>
+<li class="chapter" data-level="8.1" data-path="section-56.html"><a href="section-56.html#section-57"><i class="fa fa-check"></i><b>8.1</b> 问题</a></li>
+<li class="chapter" data-level="8.2" data-path="section-56.html"><a href="section-56.html#section-58"><i class="fa fa-check"></i><b>8.2</b> 变化</a></li>
+<li class="chapter" data-level="8.3" data-path="section-56.html"><a href="section-56.html#section-60"><i class="fa fa-check"></i><b>8.3</b> 典型值</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stata for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-56" class="section level1">
+<h1><span class="header-section-number">第 8 章</span> 探索性数据分析</h1>
+<p>本章将会向你展示如何使用数据变形和绘图探索数据。统计学家称之为探索性数据分析或 <code>EDA</code>。EDA 实际上是个循环的工作，在 EDA 中你经常需要重复下面的三个环节：</p>
+<ol style="list-style-type: decimal">
+<li>提出有关数据的问题；</li>
+<li>通过数据处理和可视化搜寻答案；</li>
+<li>使用你搜寻到的答案提出新的问题。</li>
+</ol>
+<p>EDA 并没有一个正规的流程。最重要的是，EDA 是一种好的工作习惯，它可以帮助你了解数据，发现一些简单想法的答案。在 EDA 的初始阶段，你可以随意探索一些你觉得有意思的问题，其中有一些想法你会得到正确的答案，而有些则会失败。</p>
+<p>EDA 是任何数据分析的重要组成部分。要进行数据清理，你需要部署 EDA 的所有工具：可视化、转形和建模。</p>
+<div id="section-57" class="section level2">
+<h2><span class="header-section-number">8.1</span> 问题</h2>
+<p>在 EDA 期间的目标是了解数据。最简单的方法是使用问题作为指导探索的工具。当你提出问题的时候，问题会将你的注意力集中在数据机的特定部分，并帮助你的确定要生成的图形、模型。</p>
+<p>EDA 从根本上来说是一个创造性的过程。在分析开始的时候很难提出问题，因为你不知道数据集中包含哪些信息。另一方面，你提出的每个新问题都会让你了解数据中包含的新信息，并且增加你发掘信息的机会。你可以快速深入查看数据中最有趣的部分，并开发一组发人深省的问题——如果你根据所发现的内容跟进每个问题并提出新问题。</p>
+<p>有两种类型的问题对于数据探索是非常有用的：
+1. 我的变量中出现了什么类型的变化？
+2. 我的变量之间发生了什么类型的协变？</p>
+<p>本章的其余部分将讨论这两个问题。我将解释变异和协变是什么，我将向你展示几种回答每个问题的方法。</p>
+</div>
+<div id="section-58" class="section level2">
+<h2><span class="header-section-number">8.2</span> 变化</h2>
+<div id="section-59" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> 可视化分布</h3>
+<p>如何可视化变量的分布取决于变量是分类变量还是连续变量。如果变量只能采用一小组值中的一个，则该变量是分类的。在 R 中，分类变量通常保存为因子或字符变量。要检查分类变量的分布，可以使用条形图，绘图结果见图 <a href="section-56.html#fig:histogramcut">8.1</a>。</p>
+<pre class="stata"><code>use diamonds, clear
+histogram cut, freq barwidth(0.8)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histogramcut"></span>
+<img src="assets/histogramcut.png" alt="cut 变量的分布" width="80%" />
+<p class="caption">
+图 8.1: cut 变量的分布
+</p>
+</div>
+<p>由于这里我设定了 <code>freq</code> 选项，所以纵轴显示的是频数。另外你也可以手动计算 cut 变量每个因子的观测值的数目然后绘图：</p>
+<pre class="stata"><code>use diamonds, clear
+contract cut
+tw bar _freq cut</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histogramcut2"></span>
+<img src="assets/histogramcut2.png" alt="cut 变量的分布" width="80%" />
+<p class="caption">
+图 8.2: cut 变量的分布
+</p>
+</div>
+<p>如果变量可以在连续集上进行取值，那么该变量就是连续的。数字和日期变量就是连续变量的两个例子。要检查连续变量的分布，请使用直方图：</p>
+<pre class="stata"><code>use diamonds, clear
+hist carat, freq</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histcarat"></span>
+<img src="assets/histcarat.png" alt="carat 变量的分布" width="80%" />
+<p class="caption">
+图 8.3: carat 变量的分布
+</p>
+</div>
+<p>你可以使用 <code>width(0.5)</code> 指定每组组宽为 0.5 ：</p>
+<pre class="stata"><code>hist carat, freq width(0.5)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histcarat2"></span>
+<img src="assets/histcarat2.png" alt="carat 变量的分布" width="80%" />
+<p class="caption">
+图 8.4: carat 变量的分布
+</p>
+</div>
+<p>直方图将 x 轴分成等间距的箱，然后使用条的高度显示每个箱子中的观测数。在上图中，最高的条形显示近 3000 个观测值的 carat 变量值介于 0.25 和 0.75 之间，这是条形图的左右边界。</p>
+<p><code>width()</code> 选项可以用来设置组宽，该选项是以 x 变量为单位进行测量的。在使用直方图的时候，你应该始终探索各种带宽，因为不同的宽度可以揭示不同的模式，例如图<a href="section-56.html#fig:histsmallercarat">8.5</a>是我们放大 carat &lt; 3 的钻石并选择较小的宽度绘制的直方图：</p>
+<pre class="stata"><code>use diamonds, clear
+keep if carat &lt; 3
+hist carat, width(0.1)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histsmallercarat"></span>
+<img src="assets/histsmallercarat.png" alt="carat &lt; 3 子集中 carat 变量的分布" width="80%" />
+<p class="caption">
+图 8.5: carat &lt; 3 子集中 carat 变量的分布
+</p>
+</div>
+<p>在同一幅图中叠加多个直方图是不好的，建议使用 kdensity 命令：</p>
+<pre class="stata"><code>use diamonds, clear
+keep carat cut
+colorscheme 5, palette(Paired)
+tw ///
+kdensity carat if cut == 1, lc(&quot;`r(color1)&#39;&quot;) lp(solid) || ///
+kdensity carat if cut == 2, lc(&quot;`r(color2)&#39;&quot;) lp(solid) || ///
+kdensity carat if cut == 3, lc(&quot;`r(color3)&#39;&quot;) lp(solid) || ///
+kdensity carat if cut == 4, lc(&quot;`r(color4)&#39;&quot;) lp(solid) || ///
+kdensity carat if cut == 5, lc(&quot;`r(color5)&#39;&quot;) lp(solid) ||, ///
+leg(order(1 &quot;Fair&quot; 2 &quot;Good&quot; 3 &quot;Very Good&quot; 4 &quot;Premium&quot; 5 &quot;Ideal&quot;)) ///
+xti(&quot;carat&quot;) yti(&quot;density&quot;) ylab(, format(%6.2f))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:kdensitycarat"></span>
+<img src="assets/kdensitycarat.png" alt="carat 变量的核密度分布" width="80%" />
+<p class="caption">
+图 8.6: carat 变量的核密度分布
+</p>
+</div>
+</div>
+</div>
+<div id="section-60" class="section level2">
+<h2><span class="header-section-number">8.3</span> 典型值</h2>
+<p>条形图和直方图可以展示出变量取哪些值的的情况更多、哪些值的情况较少。</p>
+
+</div>
+</div>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'HS0fE2GH92TyPjSpxeuEpr9P-gzGzoHsz',
+        app_key: 'hyvGUifU6e34ODKmahBUtoN6',
+        placeholder: '在这里评论～记得留下邮箱哈，这样有回复的时候会有邮件通知。',
+        avatar: 'monsterid',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/',
+        pageSize: '2'
+    });
+</script>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-41.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/czxa/stata4ds/edit/master/07-eda.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Stata_for_Data_Science.pdf", "Stata_for_Data_Science.epub"],
+"toc": {
+"collapse": "none"
+},
+"output_dir": "docs"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

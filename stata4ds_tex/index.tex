@@ -1,0 +1,36 @@
+\documentclass[cn,fancy,blue,11pt]{elegantbook}
+
+\title{Stata for Data Science}
+\subtitle{使用Stata进行数据整理、图表绘制与模型构建}
+
+\author{程振兴}
+\institute{https://www.czxa.top}
+\date{2019年5月20日}
+\version{第一版}
+
+\equote{Stata 是一门可以信赖的统计软件。}
+
+\logo{JNU2.jpg}
+% 封面图片来源：Photo by Alexandru Acea on Unsplash
+\cover{alexandru-acea-582050-unsplash.jpg}
+
+\usepackage[authoryear]{gbt7714}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\mainmatter
+\hypersetup{pageanchor=true}
+
+\include{body/00_preface}
+\include{body/01_introduction}
+\include{body/02_basics}
+\include{body/04_visualization}
+\include{body/05_workflows}
+\include{body/06_data}
+\include{body/07_eda}
+
+\nocite{ggplot2, R-base, R-bookdown, R-knitr, R-rmarkdown, xie2015, r4ds, stata, github,neat,haven,stata4ds, stcolor,cuse,finance,dict,stata2docx,stata-colorscheme,plotplain,tidy,flower}
+\bibliography{reference}
+\end{document}

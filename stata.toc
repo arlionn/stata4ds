@@ -1,0 +1,3 @@
+v 0.0.0.9000
+d Stata for Data Science
+p Stata for Data Science

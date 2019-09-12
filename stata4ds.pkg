@@ -1,0 +1,7 @@
+v 0.0.0.9000
+d Stata for Data Science
+d 程振兴
+d 2019年4月17日
+f diamonds.dta
+f mpg.dta
+f fincome.dta

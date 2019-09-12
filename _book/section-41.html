@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 7 章 数据变形 | Stata for Data Science</title>
+  <meta name="description" content="Stata 数据科学" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 7 章 数据变形 | Stata for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Stata 数据科学" />
+  <meta name="github-repo" content="czxa/stata4ds" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 7 章 数据变形 | Stata for Data Science" />
+  
+  <meta name="twitter:description" content="Stata 数据科学" />
+  
+
+<meta name="author" content="程振兴" />
+
+
+<meta name="date" content="2019-08-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-37.html">
+<link rel="next" href="section-56.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stata for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 前言</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#r--stata"><i class="fa fa-check"></i><b>1.1</b> 从 R 到 Stata</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stata--r"><i class="fa fa-check"></i><b>1.2</b> 从 Stata 到 R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#section-1"><i class="fa fa-check"></i><b>1.3</b> 本书内容</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#section-2"><i class="fa fa-check"></i><b>1.4</b> 阅读本书之前的准备工作</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#section-3"><i class="fa fa-check"></i><b>1.5</b> 目标读者</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#section-4"><i class="fa fa-check"></i><b>1.6</b> 排版约定</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#section-5"><i class="fa fa-check"></i><b>1.7</b> 下载示例代码</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#section-6"><i class="fa fa-check"></i><b>1.8</b> 许可证</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#section-7"><i class="fa fa-check"></i><b>1.9</b> 读者反馈</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="section-8.html"><a href="section-8.html"><i class="fa fa-check"></i><b>2</b> 导论</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-8.html"><a href="section-8.html#section-9"><i class="fa fa-check"></i><b>2.1</b> 准备工作</a></li>
+<li class="chapter" data-level="2.2" data-path="section-8.html"><a href="section-8.html#stata4ds-"><i class="fa fa-check"></i><b>2.2</b> stata4ds 命令包</a></li>
+<li class="chapter" data-level="2.3" data-path="section-8.html"><a href="section-8.html#stata-"><i class="fa fa-check"></i><b>2.3</b> 运行 Stata 代码</a></li>
+<li class="chapter" data-level="2.4" data-path="section-8.html"><a href="section-8.html#section-10"><i class="fa fa-check"></i><b>2.4</b> 获取帮助</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="stata-1.html"><a href="stata-1.html"><i class="fa fa-check"></i><b>3</b> Stata 基础操作</a><ul>
+<li class="chapter" data-level="3.1" data-path="stata-1.html"><a href="stata-1.html#stata--2"><i class="fa fa-check"></i><b>3.1</b> Stata 是什么？</a></li>
+<li class="chapter" data-level="3.2" data-path="stata-1.html"><a href="stata-1.html#stata--3"><i class="fa fa-check"></i><b>3.2</b> Stata 能做什么？</a></li>
+<li class="chapter" data-level="3.3" data-path="stata-1.html"><a href="stata-1.html#stata--4"><i class="fa fa-check"></i><b>3.3</b> Stata 基本操作</a></li>
+<li class="chapter" data-level="3.4" data-path="stata-1.html"><a href="stata-1.html#section-15"><i class="fa fa-check"></i><b>3.4</b> 数据处理</a></li>
+<li class="chapter" data-level="3.5" data-path="stata-1.html"><a href="stata-1.html#section-16"><i class="fa fa-check"></i><b>3.5</b> 数据导出</a></li>
+<li class="chapter" data-level="3.6" data-path="stata-1.html"><a href="stata-1.html#section-17"><i class="fa fa-check"></i><b>3.6</b> 绘图</a></li>
+<li class="chapter" data-level="3.7" data-path="stata-1.html"><a href="stata-1.html#section-18"><i class="fa fa-check"></i><b>3.7</b> 统计相关</a></li>
+<li class="chapter" data-level="3.8" data-path="stata-1.html"><a href="stata-1.html#t"><i class="fa fa-check"></i><b>3.8</b> t检验、方差分析和因子分析</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-23.html"><a href="section-23.html"><i class="fa fa-check"></i><b>4</b> 探索性分析</a><ul>
+<li class="chapter" data-level="4.1" data-path="section-23.html"><a href="section-23.html#section-24"><i class="fa fa-check"></i><b>4.1</b> 导论</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="section-25.html"><a href="section-25.html"><i class="fa fa-check"></i><b>5</b> 数据可视化</a><ul>
+<li class="chapter" data-level="5.1" data-path="section-25.html"><a href="section-25.html#section-26"><i class="fa fa-check"></i><b>5.1</b> 导论</a></li>
+<li class="chapter" data-level="5.2" data-path="section-25.html"><a href="section-25.html#section-27"><i class="fa fa-check"></i><b>5.2</b> 准备工作</a></li>
+<li class="chapter" data-level="5.3" data-path="section-25.html"><a href="section-25.html#section-28"><i class="fa fa-check"></i><b>5.3</b> 第一步</a></li>
+<li class="chapter" data-level="5.4" data-path="section-25.html"><a href="section-25.html#section-31"><i class="fa fa-check"></i><b>5.4</b> 散点图进阶</a></li>
+<li class="chapter" data-level="5.5" data-path="section-25.html"><a href="section-25.html#section-32"><i class="fa fa-check"></i><b>5.5</b> 分面</a></li>
+<li class="chapter" data-level="5.6" data-path="section-25.html"><a href="section-25.html#section-33"><i class="fa fa-check"></i><b>5.6</b> 几何对象</a></li>
+<li class="chapter" data-level="5.7" data-path="section-25.html"><a href="section-25.html#section-34"><i class="fa fa-check"></i><b>5.7</b> 统计变换</a></li>
+<li class="chapter" data-level="5.8" data-path="section-25.html"><a href="section-25.html#section-35"><i class="fa fa-check"></i><b>5.8</b> 位置调整</a></li>
+<li class="chapter" data-level="5.9" data-path="section-25.html"><a href="section-25.html#section-36"><i class="fa fa-check"></i><b>5.9</b> 坐标系统</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-37.html"><a href="section-37.html"><i class="fa fa-check"></i><b>6</b> 工作流程：基础</a><ul>
+<li class="chapter" data-level="6.1" data-path="section-37.html"><a href="section-37.html#section-38"><i class="fa fa-check"></i><b>6.1</b> 编程的基础知识</a></li>
+<li class="chapter" data-level="6.2" data-path="section-37.html"><a href="section-37.html#stata--6"><i class="fa fa-check"></i><b>6.2</b> Stata 的变量名</a></li>
+<li class="chapter" data-level="6.3" data-path="section-37.html"><a href="section-37.html#section-39"><i class="fa fa-check"></i><b>6.3</b> 调用函数</a></li>
+<li class="chapter" data-level="6.4" data-path="section-37.html"><a href="section-37.html#section-40"><i class="fa fa-check"></i><b>6.4</b> 实践</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="section-41.html"><a href="section-41.html"><i class="fa fa-check"></i><b>7</b> 数据变形</a><ul>
+<li class="chapter" data-level="7.1" data-path="section-41.html"><a href="section-41.html#nycflights13-"><i class="fa fa-check"></i><b>7.1</b> nycflights13 数据集</a></li>
+<li class="chapter" data-level="7.2" data-path="section-41.html"><a href="section-41.html#section-42"><i class="fa fa-check"></i><b>7.2</b> 筛选</a></li>
+<li class="chapter" data-level="7.3" data-path="section-41.html"><a href="section-41.html#section-43"><i class="fa fa-check"></i><b>7.3</b> 缺失值</a></li>
+<li class="chapter" data-level="7.4" data-path="section-41.html"><a href="section-41.html#section-44"><i class="fa fa-check"></i><b>7.4</b> 排列</a></li>
+<li class="chapter" data-level="7.5" data-path="section-41.html"><a href="section-41.html#section-47"><i class="fa fa-check"></i><b>7.5</b> 选择</a></li>
+<li class="chapter" data-level="7.6" data-path="section-41.html"><a href="section-41.html#section-48"><i class="fa fa-check"></i><b>7.6</b> 变量重命名</a></li>
+<li class="chapter" data-level="7.7" data-path="section-41.html"><a href="section-41.html#section-49"><i class="fa fa-check"></i><b>7.7</b> 生成新的变量</a></li>
+<li class="chapter" data-level="7.8" data-path="section-41.html"><a href="section-41.html#section-50"><i class="fa fa-check"></i><b>7.8</b> 分组汇总</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="section-56.html"><a href="section-56.html"><i class="fa fa-check"></i><b>8</b> 探索性数据分析</a><ul>
+<li class="chapter" data-level="8.1" data-path="section-56.html"><a href="section-56.html#section-57"><i class="fa fa-check"></i><b>8.1</b> 问题</a></li>
+<li class="chapter" data-level="8.2" data-path="section-56.html"><a href="section-56.html#section-58"><i class="fa fa-check"></i><b>8.2</b> 变化</a></li>
+<li class="chapter" data-level="8.3" data-path="section-56.html"><a href="section-56.html#section-60"><i class="fa fa-check"></i><b>8.3</b> 典型值</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stata for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-41" class="section level1">
+<h1><span class="header-section-number">第 7 章</span> 数据变形</h1>
+<p>图表是展示数据的重要工具，但是进行研究时拿到的第一手数据往往是无法直接进行绘图的，通常你需要进行适当的数据变形，例如对数据进行汇总或者生成一些新的变量。本章将介绍如何对数据进行变形。</p>
+<div id="nycflights13-" class="section level2">
+<h2><span class="header-section-number">7.1</span> nycflights13 数据集</h2>
+<p>这个数据集包含了2013年从纽约市出发的 336,776 个航班，这些数据集来自美国<a href="http://www.transtats.bts.gov/DatabaseInfo.asp?DB_ID=120&amp;Link=0">运输统计局</a>：</p>
+<pre class="stata"><code>use nycflights13, clear
+des
+
+*&gt; Contains data from nycflights13.dta
+*&gt;   obs:       336,776                          
+*&gt;  vars:            19                          29 Apr 2019 09:57
+*&gt;  size:    34,351,152                          
+*&gt; ---------------------------------------------------------------
+*&gt;               storage   display    value
+*&gt; variable name   type    format     label      variable label
+*&gt; ---------------------------------------------------------------
+*&gt; year            long    %12.0g                
+*&gt; month           long    %12.0g                
+*&gt; day             long    %12.0g                
+*&gt; dep_time        long    %12.0g                
+*&gt; sched_dep_time  long    %12.0g                
+*&gt; dep_delay       double  %10.0g                
+*&gt; arr_time        long    %12.0g                
+*&gt; sched_arr_time  long    %12.0g                
+*&gt; arr_delay       double  %10.0g                
+*&gt; carrier         str2    %-9s                  
+*&gt; flight          long    %12.0g                
+*&gt; tailnum         str6    %-9s                  
+*&gt; origin          str3    %-9s                  
+*&gt; dest            str3    %-9s                  
+*&gt; air_time        double  %10.0g                
+*&gt; distance        double  %10.0g                
+*&gt; hour            double  %10.0g                
+*&gt; minute          double  %10.0g                
+*&gt; time_hour       double  %tc                   
+*&gt; ---------------------------------------------------------------</code></pre>
+</div>
+<div id="section-42" class="section level2">
+<h2><span class="header-section-number">7.2</span> 筛选</h2>
+<p>keep 和 drop 命令允许你对数据集进行筛选，例如我们保留1月1日的所有航班：</p>
+<pre class="stata"><code>keep if month == 1 &amp; day == 1
+* 等价于
+drop if month != 1 | day != 1</code></pre>
+<p>再例如，我们保存11月和12月的航班：</p>
+<pre class="stata"><code>keep if month == 11 | month == 12
+* 等价于
+drop if month != 11 &amp; month != 12</code></pre>
+<p>逻辑运算遵循 De Morgan 定律：<code>!(x &amp; y) 等于 !x | !y</code></p>
+</div>
+<div id="section-43" class="section level2">
+<h2><span class="header-section-number">7.3</span> 缺失值</h2>
+<p>Stata中有27个数值型缺失值，其中<code>.</code>是系统缺失值（system missing value）或<code>sysmiss</code>，而剩下的26个<code>.a, .b, .c, ···, .z</code>被称为扩展缺失值（extended missing values），这些拓展缺失值的作用是帮助使用者更好的跟踪缺失值。</p>
+<p>Stata中实数的大小顺序为：</p>
+<p><span class="math display">\[
+非缺失值 &lt; . &lt; .a &lt; .b &lt;  ...  &lt; .z
+\]</span></p>
+<p>而Stata中字符串的缺失值只有一种，也就是""。</p>
+<pre class="stata"><code>clear all
+set obs 10
+gen x = .
+gen y = &quot;&quot;
+gen a = missing(x)
+gen b = missing(y)
+list
+*&gt;     +---------------+
+*&gt;     | x   y   a   b |
+*&gt;     |---------------|
+*&gt;  1. | .       1   1 |
+*&gt;  2. | .       1   1 |
+*&gt;  3. | .       1   1 |
+*&gt;  4. | .       1   1 |
+*&gt;  5. | .       1   1 |
+*&gt;     |---------------|
+*&gt;  6. | .       1   1 |
+*&gt;  7. | .       1   1 |
+*&gt;  8. | .       1   1 |
+*&gt;  9. | .       1   1 |
+*&gt; 10. | .       1   1 |
+*&gt;     +---------------+</code></pre>
+<pre class="stata"><code>clear all
+set obs 3
+gen a = .
+replace a = 1 in 1
+replace a = 3 in 3
+keep if missing(a) | a &gt; 1
+list
+*&gt;    +---+
+*&gt;    | a |
+*&gt;    |---|
+*&gt; 1. | . |
+*&gt; 2. | 3 |
+*&gt;    +---+</code></pre>
+</div>
+<div id="section-44" class="section level2">
+<h2><span class="header-section-number">7.4</span> 排列</h2>
+<div id="section-45" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> 列排序</h3>
+<p>列排序的意义不大，主要是把我们最关心的一些列排在前几列方便我们观察：</p>
+<pre class="stata"><code>use nycflights13, clear
+order year month day</code></pre>
+<p>这样就能把 year month day 三个变量排在前三列了。</p>
+</div>
+<div id="section-46" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> 行排序</h3>
+<p>行排序可以让我们更容易看到变量的极值：</p>
+<pre class="stata"><code>* 顺序
+gsort dep_time
+* 逆序
+gsort -dep_time</code></pre>
+<p>多变量排序：</p>
+<pre class="stata"><code>gsort dep_time -sched_dep_time</code></pre>
+<p>由于缺失值大于所有非缺失值，所以顺序排列的时候缺失值排在最后一行。</p>
+</div>
+</div>
+<div id="section-47" class="section level2">
+<h2><span class="header-section-number">7.5</span> 选择</h2>
+<p>选择变量同样可以使用 keep 和 drop 实现，例如只保留 year month day 变量：</p>
+<pre class="stata"><code>keep year month day
+* 或者
+drop dep_time - time_hour</code></pre>
+<p><code>dep_time - time_hour</code> 表示 <code>dep_time</code> 到 <code>time_hour</code> 的所有变量。</p>
+<p>变量选择可以使用通配符，例如保留所有开头为 a 的变量：</p>
+<pre class="stata"><code>use nycflights13, clear
+keep a*</code></pre>
+<p>保留所有结尾为 y 的变量：</p>
+<pre class="stata"><code>use nycflights13, clear
+keep *y</code></pre>
+<p>保留所有变量名中含 a 的变量：</p>
+<pre class="stata"><code>use nycflights13, clear
+keep *a*</code></pre>
+</div>
+<div id="section-48" class="section level2">
+<h2><span class="header-section-number">7.6</span> 变量重命名</h2>
+<p>变量重命名使用 rename 命令，例如根据 year month day 变量生成 date 变量，再把 date 变量重命名为 <code>日期</code>：</p>
+<pre class="stata"><code>use nycflights13, clear
+gen tempdate = string(year) + &quot;-&quot; + string(month) + &quot;-&quot; + string(day)
+gen date = date(tempdate, &quot;YMD&quot;)
+order date
+format date %tdCY-N-D
+drop tempdate
+ren date 日期</code></pre>
+</div>
+<div id="section-49" class="section level2">
+<h2><span class="header-section-number">7.7</span> 生成新的变量</h2>
+<pre class="stata"><code>use nycflights13, clear
+keep year - day *delay distance air_time
+gen gain = dep_delay - arr_delay
+gen speed = distance / air_time * 60</code></pre>
+<p>你可以继续使用刚刚生成的新列：</p>
+<pre class="stata"><code>gen hours = air_time / 60
+gen gain_per_hour = gain / hours</code></pre>
+<p>一些有用的函数：</p>
+<pre class="stata"><code>use nycflights13, clear
+keep dep_time
+* 整除
+gen hour = int(dep_time / 100)
+* 取余
+gen minute = mod(dep_time, 100)</code></pre>
+<p>滞后与领先：</p>
+<pre class="stata"><code>use nycflights13, clear
+gen tempdate = string(year) + &quot;-&quot; + string(month) + &quot;-&quot; + string(day)
+gen date = date(tempdate, &quot;YMD&quot;)
+order date
+format date %tdCY-N-D
+drop tempdate
+
+duplicates drop date, force
+tsset date
+keep date dep_time
+gen lag = l.dep_time
+gen lead = f.dep_time</code></pre>
+<p>累计求和：</p>
+<pre class="stata"><code>clear all
+set obs 10
+gen x = _n
+gen cumsum = sum(x)
+gen cummean = sum(x) / x
+list
+*&gt;     +----------------------+
+*&gt;     |  x   total   cummean |
+*&gt;     |----------------------|
+*&gt;  1. |  1       1         1 |
+*&gt;  2. |  2       3       1.5 |
+*&gt;  3. |  3       6         2 |
+*&gt;  4. |  4      10       2.5 |
+*&gt;  5. |  5      15         3 |
+*&gt;     |----------------------|
+*&gt;  6. |  6      21       3.5 |
+*&gt;  7. |  7      28         4 |
+*&gt;  8. |  8      36       4.5 |
+*&gt;  9. |  9      45         5 |
+*&gt; 10. | 10      55       5.5 |
+*&gt;     +----------------------+</code></pre>
+<p>排名函数：</p>
+<pre class="stata"><code>clear all
+set obs 6
+gen x = 2
+replace x = 1 in 1
+replace x = . in 4
+replace x = 3 in 5
+replace x = 4 in 6
+egen rank1 = rank(x), field
+egen rank2 = rank(x), track
+egen rank3 = rank(x), unique
+list
+
+*&gt;    +---------------------------+
+*&gt;    | x   rank1   rank2   rank3 |
+*&gt;    |---------------------------|
+*&gt; 1. | 1       5       1       1 |
+*&gt; 2. | 2       3       2       2 |
+*&gt; 3. | 2       3       2       3 |
+*&gt; 4. | .       .       .       . |
+*&gt; 5. | 3       2       4       4 |
+*&gt;    |---------------------------|
+*&gt; 6. | 4       1       5       5 |
+*&gt;    +---------------------------+</code></pre>
+</div>
+<div id="section-50" class="section level2">
+<h2><span class="header-section-number">7.8</span> 分组汇总</h2>
+<p>求 dep_delay 变量的均值：</p>
+<pre class="stata"><code>use nycflights13, clear
+sum dep_delay
+*&gt;     Variable |        Obs        Mean    Std. Dev.       Min        Max
+*&gt; -------------+---------------------------------------------------------
+*&gt;    dep_delay |    328,521    12.63907    40.21006        -43       1301</code></pre>
+<p>求每一天 dep_delay 变量的均值。</p>
+<p>方法一（tabstat）：</p>
+<pre class="stata"><code>use nycflights13, clear
+sum dep_delay
+
+gen tempdate = string(year) + &quot;-&quot; + string(month) + &quot;-&quot; + string(day)
+gen date = date(tempdate, &quot;YMD&quot;)
+order date
+format date %tdCY-N-D
+drop tempdate
+
+tabstat dep_delay, by(date) stat(mean) nototal save
+
+*&gt; Summary for variables: dep_delay
+*&gt;      by categories of: date
+*&gt;      date |      mean
+*&gt; ----------+----------
+*&gt; 2013-01-01 |  11.54893
+*&gt; 2013-01-02 |  13.85882
+*&gt; 2013-01-03 |  10.98783
+*&gt; 2013-01-04 |  8.951595
+*&gt; 2013-01-05 |  5.732218
+*&gt; 2013-01-06 |  7.148014
+*&gt; 2013-01-07 |  5.417204
+*&gt; 2013-01-08 |  2.553073
+*&gt; ······
+*&gt; 2013-12-24 |  6.765957
+*&gt; 2013-12-25 |  7.552448
+*&gt; 2013-12-26 |   14.4172
+*&gt; 2013-12-27 |  10.93763
+*&gt; 2013-12-28 |   7.98155
+*&gt; 2013-12-29 |  22.30955
+*&gt; 2013-12-30 |  10.69811
+*&gt; 2013-12-31 |  6.996053
+*&gt; ---------------------</code></pre>
+<p>方法二（sumup）：</p>
+<pre class="stata"><code>use nycflights13, clear
+sumup dep_delay, by(year month day) statistics(mean) save(temp.dta) replace
+use temp, clear
+list in 1/10
+
+*&gt;     +-------------------------------+
+*&gt;     | year   month   day       mean |
+*&gt;     |-------------------------------|
+*&gt;  1. | 2013       1     1   11.54893 |
+*&gt;  2. | 2013       1     2   13.85882 |
+*&gt;  3. | 2013       1     3   10.98783 |
+*&gt;  4. | 2013       1     4   8.951595 |
+*&gt;  5. | 2013       1     5   5.732218 |
+*&gt;     |-------------------------------|
+*&gt;  6. | 2013       1     6   7.148015 |
+*&gt;  7. | 2013       1     7   5.417204 |
+*&gt;  8. | 2013       1     8   2.553073 |
+*&gt;  9. | 2013       1     9   2.276477 |
+*&gt; 10. | 2013       1    10   2.844995 |
+*&gt;     +-------------------------------+</code></pre>
+<div id="section-51" class="section level3">
+<h3><span class="header-section-number">7.8.1</span> 观察航班里程和航班延误时间的关系</h3>
+<p>图 <a href="section-41.html#fig:delaydist">7.1</a> 展示了航班里程和航班延误时间的关系：</p>
+<pre class="stata"><code>use nycflights13, clear
+bysort dest: gen count = _N 
+bysort dest: egen dist = mean(dist)
+bysort dest: egen delay = mean(arr_delay)
+keep if count &gt; 20 &amp; dest != &quot;HNL&quot;
+duplicates drop dest, force
+
+tw ///
+sc delay dist [fw = count], msize(*0.3) || ///
+lpoly delay dist, lc(blue) bw(300) ||, ///
+leg(pos(6) order(1 &quot;局部多项式拟合&quot;)) ///
+note(散点半径表示该天的航班数)</code></pre>
+<p>这里使用 <code>lpoly</code> 命令进行局部多项式拟合，<code>bw()</code> 选项用于选择带宽，其数值越大曲线越平滑。</p>
+<div class="figure" style="text-align: center"><span id="fig:delaydist"></span>
+<img src="assets/delaydist.png" alt="航班里程和航班延误时间的关系" width="80%" />
+<p class="caption">
+图 7.1: 航班里程和航班延误时间的关系
+</p>
+</div>
+<p>不同于 R 语言，Stata 中不能方便的建立各种映射，这里我是使用 fw 频率权重将 count 变量展示为散点的大小。你会发现这个映射是没有图例的。</p>
+</div>
+<div id="section-52" class="section level3">
+<h3><span class="header-section-number">7.8.2</span> 缺失值的处理</h3>
+<p>我们可以预先删除含有缺失值的变量：</p>
+<pre class="stata"><code>use nycflights13, clear
+drop if missing(dep_delay) | missing(arr_delay)
+bysort year month day: egen mean = mean(dep_delay)
+duplicates drop year month day, force
+list year month day mean in 1/5
+
+*&gt;    +-------------------------------+
+*&gt;    | year   month   day       mean |
+*&gt;    |-------------------------------|
+*&gt; 1. | 2013       1     1   11.43562 |
+*&gt; 2. | 2013       1     2    13.6778 |
+*&gt; 3. | 2013       1     3   10.90778 |
+*&gt; 4. | 2013       1     4   8.965859 |
+*&gt; 5. | 2013       1     5   5.732218 |
+*&gt;    +-------------------------------+</code></pre>
+</div>
+<div id="section-53" class="section level3">
+<h3><span class="header-section-number">7.8.3</span> 观测值计数</h3>
+<p>对数据进行分组汇总的时候，最好包括观测值的数量或非缺失观测值的数量。这样，您可以检查您的结论是否是根据非常少量的数据得出的。例如，让我们看一下不同尾号的飞机的平均延迟时间的分布，见图 <a href="section-41.html#fig:kdensitydelay">7.2</a>：</p>
+<pre class="stata"><code>use nycflights13, clear
+drop if missing(dep_delay) | missing(arr_delay)
+bysort tailnum: egen delay = mean(arr_delay)
+duplicates drop tailnum, force
+kdensity delay</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:kdensitydelay"></span>
+<img src="assets/kdensitydelay.png" alt="不同尾号的飞机的平均延迟时间的分布" width="80%" />
+<p class="caption">
+图 7.2: 不同尾号的飞机的平均延迟时间的分布
+</p>
+</div>
+<p>可以看到，有些型号的飞机可能延迟 &gt;300 分钟！</p>
+<p>如果我们绘制航班数量与平均延误的散点图，我们可以发现更多的东西：</p>
+<pre class="stata"><code>use nycflights13, clear
+drop if missing(dep_delay) | missing(arr_delay)
+bysort tailnum: egen delay = mean(arr_delay)
+bysort tailnum: gen n = _N
+duplicates drop tailnum, force
+tw sc delay n, mc(%30)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:scdelayn"></span>
+<img src="assets/scdelayn.png" alt="航班数量与平均延误的散点图" width="80%" />
+<p class="caption">
+图 7.3: 航班数量与平均延误的散点图
+</p>
+</div>
+<p>从 <a href="section-41.html#fig:scdelayn">7.3</a> 中我们可以看到当航班很少的时候，平均延误的波动会很大，当然这其实是大数定律。</p>
+<p>观测值很少的平均数往往是没有太多意义的，所以很多时候我们会过滤掉这些观测值很少的点：</p>
+<pre class="stata"><code>use nycflights13, clear
+drop if missing(dep_delay) | missing(arr_delay)
+bysort tailnum: egen delay = mean(arr_delay)
+bysort tailnum: gen n = _N
+duplicates drop tailnum, force
+tw sc delay n if n &gt; 25, mc(%30)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:scdelayn2"></span>
+<img src="assets/scdelayn2.png" alt="航班数量与平均延误的散点图（过滤掉观测值很少的散点）" width="80%" />
+<p class="caption">
+图 7.4: 航班数量与平均延误的散点图（过滤掉观测值很少的散点）
+</p>
+</div>
+<p>这种模式还有另一种常见的变化。让我们来看看棒球击球手的平均表现如何与他们击球的次数有关：</p>
+<pre class="stata"><code>use batting, clear
+bysort playerID: egen temp1 = sum(H)
+bysort playerID: egen temp2 = sum(AB)
+gen ba = temp1 / temp2
+bysort playerID: egen ab = sum(AB)
+drop temp*
+keep if ab &gt; 100
+duplicates drop playerID, force
+tw ///
+sc ba ab, mc(%30) || ///
+lpoly ba ab, lc(blue) ||, ///
+leg(pos(6) rows(1))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:scbaab"></span>
+<img src="assets/scbaab.png" alt="棒球击球手的平均表现与他们击球的次数的关系" width="80%" />
+<p class="caption">
+图 7.5: 棒球击球手的平均表现与他们击球的次数的关系
+</p>
+</div>
+<p>可以看到，击球次数越多的击球手表现越稳定，表现也越好。</p>
+</div>
+<div id="section-54" class="section level3">
+<h3><span class="header-section-number">7.8.4</span> 有用的汇总函数</h3>
+<p>这部分内容可以参考 Stata 的相关帮助文档：</p>
+<pre class="stata"><code>help egen 
+search egenmore
+search egenmisc</code></pre>
+<p>或者参考我的网站博客：<a href="https://www.czxa.top/posts/18884/">Stata中的egen函数</a>。</p>
+</div>
+<div id="section-55" class="section level3">
+<h3><span class="header-section-number">7.8.5</span> 按多变量分组</h3>
+<p>前文中我大量使用了 by/bysort 进行分组聚合，关于 by/bysort 的更多用法可以参考帮助文档：<code>help by</code>。</p>
+
+</div>
+</div>
+</div>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'HS0fE2GH92TyPjSpxeuEpr9P-gzGzoHsz',
+        app_key: 'hyvGUifU6e34ODKmahBUtoN6',
+        placeholder: '在这里评论～记得留下邮箱哈，这样有回复的时候会有邮件通知。',
+        avatar: 'monsterid',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/',
+        pageSize: '2'
+    });
+</script>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-37.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-56.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/czxa/stata4ds/edit/master/06-dt.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Stata_for_Data_Science.pdf", "Stata_for_Data_Science.epub"],
+"toc": {
+"collapse": "none"
+},
+"output_dir": "docs"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

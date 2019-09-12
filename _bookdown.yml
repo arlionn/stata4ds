@@ -1,0 +1,19 @@
+book_filename: "Stata_for_Data_Science"
+delete_merged_file: true
+language:
+  label:
+    fig: "图 "
+    tab: "表 "
+    eq: "公式 "
+    thm: "定理 "
+    lem: "引理 "
+    cor: "推论 "
+    def: "定义 "
+    exm: "示例 "
+    proof: "证明 "
+    remark: "注意 "
+    solution: "解答 "
+
+  ui:
+    edit: "编辑"
+    chapter_name: ["第 ", " 章"]

@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 5 章 数据可视化 | Stata for Data Science</title>
+  <meta name="description" content="Stata 数据科学" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 5 章 数据可视化 | Stata for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Stata 数据科学" />
+  <meta name="github-repo" content="czxa/stata4ds" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 5 章 数据可视化 | Stata for Data Science" />
+  
+  <meta name="twitter:description" content="Stata 数据科学" />
+  
+
+<meta name="author" content="程振兴" />
+
+
+<meta name="date" content="2019-08-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-23.html">
+<link rel="next" href="section-37.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stata for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 前言</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#r--stata"><i class="fa fa-check"></i><b>1.1</b> 从 R 到 Stata</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stata--r"><i class="fa fa-check"></i><b>1.2</b> 从 Stata 到 R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#section-1"><i class="fa fa-check"></i><b>1.3</b> 本书内容</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#section-2"><i class="fa fa-check"></i><b>1.4</b> 阅读本书之前的准备工作</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#section-3"><i class="fa fa-check"></i><b>1.5</b> 目标读者</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#section-4"><i class="fa fa-check"></i><b>1.6</b> 排版约定</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#section-5"><i class="fa fa-check"></i><b>1.7</b> 下载示例代码</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#section-6"><i class="fa fa-check"></i><b>1.8</b> 许可证</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#section-7"><i class="fa fa-check"></i><b>1.9</b> 读者反馈</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="section-8.html"><a href="section-8.html"><i class="fa fa-check"></i><b>2</b> 导论</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-8.html"><a href="section-8.html#section-9"><i class="fa fa-check"></i><b>2.1</b> 准备工作</a></li>
+<li class="chapter" data-level="2.2" data-path="section-8.html"><a href="section-8.html#stata4ds-"><i class="fa fa-check"></i><b>2.2</b> stata4ds 命令包</a></li>
+<li class="chapter" data-level="2.3" data-path="section-8.html"><a href="section-8.html#stata-"><i class="fa fa-check"></i><b>2.3</b> 运行 Stata 代码</a></li>
+<li class="chapter" data-level="2.4" data-path="section-8.html"><a href="section-8.html#section-10"><i class="fa fa-check"></i><b>2.4</b> 获取帮助</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="stata-1.html"><a href="stata-1.html"><i class="fa fa-check"></i><b>3</b> Stata 基础操作</a><ul>
+<li class="chapter" data-level="3.1" data-path="stata-1.html"><a href="stata-1.html#stata--2"><i class="fa fa-check"></i><b>3.1</b> Stata 是什么？</a></li>
+<li class="chapter" data-level="3.2" data-path="stata-1.html"><a href="stata-1.html#stata--3"><i class="fa fa-check"></i><b>3.2</b> Stata 能做什么？</a></li>
+<li class="chapter" data-level="3.3" data-path="stata-1.html"><a href="stata-1.html#stata--4"><i class="fa fa-check"></i><b>3.3</b> Stata 基本操作</a></li>
+<li class="chapter" data-level="3.4" data-path="stata-1.html"><a href="stata-1.html#section-15"><i class="fa fa-check"></i><b>3.4</b> 数据处理</a></li>
+<li class="chapter" data-level="3.5" data-path="stata-1.html"><a href="stata-1.html#section-16"><i class="fa fa-check"></i><b>3.5</b> 数据导出</a></li>
+<li class="chapter" data-level="3.6" data-path="stata-1.html"><a href="stata-1.html#section-17"><i class="fa fa-check"></i><b>3.6</b> 绘图</a></li>
+<li class="chapter" data-level="3.7" data-path="stata-1.html"><a href="stata-1.html#section-18"><i class="fa fa-check"></i><b>3.7</b> 统计相关</a></li>
+<li class="chapter" data-level="3.8" data-path="stata-1.html"><a href="stata-1.html#t"><i class="fa fa-check"></i><b>3.8</b> t检验、方差分析和因子分析</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-23.html"><a href="section-23.html"><i class="fa fa-check"></i><b>4</b> 探索性分析</a><ul>
+<li class="chapter" data-level="4.1" data-path="section-23.html"><a href="section-23.html#section-24"><i class="fa fa-check"></i><b>4.1</b> 导论</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="section-25.html"><a href="section-25.html"><i class="fa fa-check"></i><b>5</b> 数据可视化</a><ul>
+<li class="chapter" data-level="5.1" data-path="section-25.html"><a href="section-25.html#section-26"><i class="fa fa-check"></i><b>5.1</b> 导论</a></li>
+<li class="chapter" data-level="5.2" data-path="section-25.html"><a href="section-25.html#section-27"><i class="fa fa-check"></i><b>5.2</b> 准备工作</a></li>
+<li class="chapter" data-level="5.3" data-path="section-25.html"><a href="section-25.html#section-28"><i class="fa fa-check"></i><b>5.3</b> 第一步</a></li>
+<li class="chapter" data-level="5.4" data-path="section-25.html"><a href="section-25.html#section-31"><i class="fa fa-check"></i><b>5.4</b> 散点图进阶</a></li>
+<li class="chapter" data-level="5.5" data-path="section-25.html"><a href="section-25.html#section-32"><i class="fa fa-check"></i><b>5.5</b> 分面</a></li>
+<li class="chapter" data-level="5.6" data-path="section-25.html"><a href="section-25.html#section-33"><i class="fa fa-check"></i><b>5.6</b> 几何对象</a></li>
+<li class="chapter" data-level="5.7" data-path="section-25.html"><a href="section-25.html#section-34"><i class="fa fa-check"></i><b>5.7</b> 统计变换</a></li>
+<li class="chapter" data-level="5.8" data-path="section-25.html"><a href="section-25.html#section-35"><i class="fa fa-check"></i><b>5.8</b> 位置调整</a></li>
+<li class="chapter" data-level="5.9" data-path="section-25.html"><a href="section-25.html#section-36"><i class="fa fa-check"></i><b>5.9</b> 坐标系统</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-37.html"><a href="section-37.html"><i class="fa fa-check"></i><b>6</b> 工作流程：基础</a><ul>
+<li class="chapter" data-level="6.1" data-path="section-37.html"><a href="section-37.html#section-38"><i class="fa fa-check"></i><b>6.1</b> 编程的基础知识</a></li>
+<li class="chapter" data-level="6.2" data-path="section-37.html"><a href="section-37.html#stata--6"><i class="fa fa-check"></i><b>6.2</b> Stata 的变量名</a></li>
+<li class="chapter" data-level="6.3" data-path="section-37.html"><a href="section-37.html#section-39"><i class="fa fa-check"></i><b>6.3</b> 调用函数</a></li>
+<li class="chapter" data-level="6.4" data-path="section-37.html"><a href="section-37.html#section-40"><i class="fa fa-check"></i><b>6.4</b> 实践</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="section-41.html"><a href="section-41.html"><i class="fa fa-check"></i><b>7</b> 数据变形</a><ul>
+<li class="chapter" data-level="7.1" data-path="section-41.html"><a href="section-41.html#nycflights13-"><i class="fa fa-check"></i><b>7.1</b> nycflights13 数据集</a></li>
+<li class="chapter" data-level="7.2" data-path="section-41.html"><a href="section-41.html#section-42"><i class="fa fa-check"></i><b>7.2</b> 筛选</a></li>
+<li class="chapter" data-level="7.3" data-path="section-41.html"><a href="section-41.html#section-43"><i class="fa fa-check"></i><b>7.3</b> 缺失值</a></li>
+<li class="chapter" data-level="7.4" data-path="section-41.html"><a href="section-41.html#section-44"><i class="fa fa-check"></i><b>7.4</b> 排列</a></li>
+<li class="chapter" data-level="7.5" data-path="section-41.html"><a href="section-41.html#section-47"><i class="fa fa-check"></i><b>7.5</b> 选择</a></li>
+<li class="chapter" data-level="7.6" data-path="section-41.html"><a href="section-41.html#section-48"><i class="fa fa-check"></i><b>7.6</b> 变量重命名</a></li>
+<li class="chapter" data-level="7.7" data-path="section-41.html"><a href="section-41.html#section-49"><i class="fa fa-check"></i><b>7.7</b> 生成新的变量</a></li>
+<li class="chapter" data-level="7.8" data-path="section-41.html"><a href="section-41.html#section-50"><i class="fa fa-check"></i><b>7.8</b> 分组汇总</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="section-56.html"><a href="section-56.html"><i class="fa fa-check"></i><b>8</b> 探索性数据分析</a><ul>
+<li class="chapter" data-level="8.1" data-path="section-56.html"><a href="section-56.html#section-57"><i class="fa fa-check"></i><b>8.1</b> 问题</a></li>
+<li class="chapter" data-level="8.2" data-path="section-56.html"><a href="section-56.html#section-58"><i class="fa fa-check"></i><b>8.2</b> 变化</a></li>
+<li class="chapter" data-level="8.3" data-path="section-56.html"><a href="section-56.html#section-60"><i class="fa fa-check"></i><b>8.3</b> 典型值</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stata for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-25" class="section level1">
+<h1><span class="header-section-number">第 5 章</span> 数据可视化</h1>
+<div id="section-26" class="section level2">
+<h2><span class="header-section-number">5.1</span> 导论</h2>
+<blockquote>
+<p>“The simple graph has brought more information to the data analyst’s mind than any other device.” — John Tukey</p>
+</blockquote>
+<p>本章将会向你介绍如何使用 Stata 进行绘图，Stata 的绘图方法比较接近图形语法。</p>
+</div>
+<div id="section-27" class="section level2">
+<h2><span class="header-section-number">5.2</span> 准备工作</h2>
+<p>作者认为 Stata 的默认绘图主题不怎么好看，所以建议不要使用，推荐使用 plotplain 主题，安装方法如下：</p>
+<pre class="stata"><code>* 安装主题包
+net install gr0070, from(&quot;http://www.stata-journal.com/software/sj17-3&quot;) replace
+* 设置 plotplain 会默认绘图主题
+set scheme plotplain, permanently</code></pre>
+<p>关于 Stata 绘图主题的选择，可以参考 <a href="https://blog.stata.com/2018/10/02/scheming-your-way-to-your-favorite-graph-style/">Scheming your way to your favorite graph style</a> 和 <a href="https://www.czxa.top/posts/24695/">Stata的绘图主题</a>。</p>
+</div>
+<div id="section-28" class="section level2">
+<h2><span class="header-section-number">5.3</span> 第一步</h2>
+<p>让我们用图表回答这么一个问题：大排量的汽车是否比小排量的汽车使用更多的燃料？你可能已经有了答案，但是图表可以让你的答案更有说服力，发动机的功率和燃油效率之间的关系是怎样的，是正相关么？是线性的么？</p>
+<div id="mpg-" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> 读入 mpg 数据</h3>
+<p>这个数据集来源于 R 的 ggplot2 包，mpg 数据集包含了美国环保局收集的 38 种型号的汽车的数据：</p>
+<pre class="stata"><code>cd ~/Documents/我的项目/stata4ds/
+sysuse mpg, clear</code></pre>
+<p>表 <a href="section-25.html#tab:mpg">5.1</a> 展示了 mpg 数据集的一部分。</p>
+<table>
+<caption><span id="tab:mpg">表 5.1: </span>mpg 数据概览</caption>
+<thead>
+<tr class="header">
+<th align="center">manufacturer</th>
+<th align="center">model</th>
+<th align="center">displ</th>
+<th align="center">year</th>
+<th align="center">cyl</th>
+<th align="center">trans</th>
+<th align="center">drv</th>
+<th align="center">cty</th>
+<th align="center">hwy</th>
+<th align="center">fl</th>
+<th align="center">class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">audi</td>
+<td align="center">a4</td>
+<td align="center">1.8</td>
+<td align="center">1999</td>
+<td align="center">4</td>
+<td align="center">auto(l5)</td>
+<td align="center">f</td>
+<td align="center">18</td>
+<td align="center">29</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="even">
+<td align="center">audi</td>
+<td align="center">a4</td>
+<td align="center">1.8</td>
+<td align="center">1999</td>
+<td align="center">4</td>
+<td align="center">manual(m5)</td>
+<td align="center">f</td>
+<td align="center">21</td>
+<td align="center">29</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="odd">
+<td align="center">audi</td>
+<td align="center">a4</td>
+<td align="center">2.0</td>
+<td align="center">2008</td>
+<td align="center">4</td>
+<td align="center">manual(m6)</td>
+<td align="center">f</td>
+<td align="center">20</td>
+<td align="center">31</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="even">
+<td align="center">audi</td>
+<td align="center">a4</td>
+<td align="center">2.0</td>
+<td align="center">2008</td>
+<td align="center">4</td>
+<td align="center">auto(av)</td>
+<td align="center">f</td>
+<td align="center">21</td>
+<td align="center">30</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="odd">
+<td align="center">audi</td>
+<td align="center">a4</td>
+<td align="center">2.8</td>
+<td align="center">1999</td>
+<td align="center">6</td>
+<td align="center">auto(l5)</td>
+<td align="center">f</td>
+<td align="center">16</td>
+<td align="center">26</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="even">
+<td align="center">audi</td>
+<td align="center">a4</td>
+<td align="center">2.8</td>
+<td align="center">1999</td>
+<td align="center">6</td>
+<td align="center">manual(m5)</td>
+<td align="center">f</td>
+<td align="center">18</td>
+<td align="center">26</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="odd">
+<td align="center">audi</td>
+<td align="center">a4</td>
+<td align="center">3.1</td>
+<td align="center">2008</td>
+<td align="center">6</td>
+<td align="center">auto(av)</td>
+<td align="center">f</td>
+<td align="center">18</td>
+<td align="center">27</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="even">
+<td align="center">audi</td>
+<td align="center">a4 quattro</td>
+<td align="center">1.8</td>
+<td align="center">1999</td>
+<td align="center">4</td>
+<td align="center">manual(m5)</td>
+<td align="center">4</td>
+<td align="center">18</td>
+<td align="center">26</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="odd">
+<td align="center">audi</td>
+<td align="center">a4 quattro</td>
+<td align="center">1.8</td>
+<td align="center">1999</td>
+<td align="center">4</td>
+<td align="center">auto(l5)</td>
+<td align="center">4</td>
+<td align="center">16</td>
+<td align="center">25</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+<tr class="even">
+<td align="center">audi</td>
+<td align="center">a4 quattro</td>
+<td align="center">2.0</td>
+<td align="center">2008</td>
+<td align="center">4</td>
+<td align="center">manual(m6)</td>
+<td align="center">4</td>
+<td align="center">20</td>
+<td align="center">28</td>
+<td align="center">p</td>
+<td align="center">compact</td>
+</tr>
+</tbody>
+</table>
+<p>其中：
+1. dipl 变量为发动机的排量，单位为升；
+2. hwy 变量是汽车在高速公路上的燃油效率，以每加仑汽油前进英里数（mpg）计算。当行驶相同距离时，具有低燃油效率的汽车消耗更多的燃料。</p>
+</div>
+<div id="section-29" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> 创建散点图</h3>
+<p><code>scatter</code> 命令的基本用法是 <code>scatter y x</code>，如图 <a href="section-25.html#fig:hwydispl">5.1</a>：</p>
+<pre class="stata"><code>twoway scatter hwy displ</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydispl"></span>
+<img src="assets/hwydispl.png" alt="汽车排量与燃油效率" width="80%" />
+<p class="caption">
+图 5.1: 汽车排量与燃油效率
+</p>
+</div>
+<p>图 <a href="section-25.html#fig:hwydispl">5.1</a> 显示了发动机排量和燃油效率之间的负相关关系，换句话来说，汽车的排量越高，燃油效率越低。</p>
+</div>
+<div id="section-30" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> 练习</h3>
+<ol style="list-style-type: decimal">
+<li>运行 <code>sc hwy displ</code>，你看到了什么？</li>
+</ol>
+<blockquote>
+<p>scatter 命令可以被简写为 sc, 当要绘制的图层只有一个时，twoway（可以简写为 tw）是可以省略的。</p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><code>mpg</code> 数据有多少行？多少列？</li>
+</ol>
+<pre class="stata"><code>sum
+*&gt;     Variable |        Obs        Mean    Std. Dev.       Min        Max
+*&gt; -------------+---------------------------------------------------------
+*&gt; manufacturer |          0
+*&gt;        model |          0
+*&gt;        displ |        234    3.471795    1.291959        1.6          7
+*&gt;         year |        234      2003.5    4.509646       1999       2008
+*&gt;          cyl |        234    5.888889    1.611534          4          8
+*&gt; -------------+---------------------------------------------------------
+*&gt;        trans |          0
+*&gt;          drv |          0
+*&gt;          cty |        234    16.85897    4.255946          9         35
+*&gt;          hwy |        234    23.44017    5.954643         12         44
+*&gt;           fl |          0
+*&gt; -------------+---------------------------------------------------------
+*&gt;        class |          0</code></pre>
+<p>可以看出 mpg 数据集有 11 个变量和 234 个观测值。除此之外，<code>count</code> 命令可以用于观测值计数：</p>
+<pre class="stata"><code>count
+*&gt; 234</code></pre>
+<p><code>ds</code> 变量可以列示出符合条件的变量，默认列示出所有变量：</p>
+<pre class="stata"><code>ds
+*&gt; manufacturer  displ         cyl           drv           hwy           class
+*&gt; model         year          trans         cty           fl
+
+* 查看上面命令运行产生的返回值
+return list
+*&gt; macros:
+*&gt;     r(varlist) : &quot;manufacturer model displ year cyl trans drv cty hwy fl c..&quot;
+
+* 返回值可以被后续的程序使用
+di &quot;`r(varlist)&#39;&quot;
+*&gt; manufacturer model displ year cyl trans drv cty hwy fl class
+
+* `r(varlist)&#39; 是一个字符串，wordcount() 函数可以用于计算字符串的中包含的单词个数
+di wordcount(&quot;`r(varlist)&#39;&quot;)
+*&gt; 11</code></pre>
+<p>关于 <code>ds</code> 命令的使用可以参考其帮助文档(help ds) 或者我的博客文章： <a href="https://www.czxa.top/posts/44612/#ds%E5%91%BD%E4%BB%A4%EF%BC%9A%E5%88%97%E5%87%BA%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D%E7%A7%B0">Stata中的变量名与标签#ds命令：列出符合条件的变量名称</a></p>
+<p>最后你还可以使用 c 类返回值 c(N) 和 c(k) 查看当前数据集的观测值个数和变量的个数。关于 c 类返回值的更多内容将会在下一章介绍。</p>
+<pre class="stata"><code>di c(N)
+*&gt; 74
+
+di c(k)
+*&gt; 11</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>如何查看变量 drv 的描述性统计？</li>
+</ol>
+<pre class="stata"><code>sum drv
+*&gt;     Variable |        Obs        Mean    Std. Dev.       Min        Max
+*&gt; -------------+---------------------------------------------------------
+*&gt;          drv |          0</code></pre>
+<p>这是因为 drv 是一个字符串变量，我们无法使用 summarize 变量对其进行描述性统计。不过 codeook 命令也能对变量进行描述：</p>
+<pre class="stata"><code>codebook drv
+*&gt; ---------------------------------------------------------------------
+*&gt; drv                                                       (unlabeled)
+*&gt; ---------------------------------------------------------------------
+*&gt; 
+*&gt;                   type:  string (str1)
+*&gt; 
+*&gt;          unique values:  3                        missing &quot;&quot;:  0/234
+*&gt; 
+*&gt;             tabulation:  Freq.  Value
+*&gt;                            103  &quot;4&quot;
+*&gt;                            106  &quot;f&quot;
+*&gt;                             25  &quot;r&quot;</code></pre>
+<p>从上面的结果可以看出，drv 变量是字符串变量、只有3种值，没有缺失值。<code>unlabeled</code> 表示该变量没有数值标签（help label）。</p>
+<ol start="4" style="list-style-type: decimal">
+<li>制作 hwy 对 cyl 的散点图，如图 <a href="section-25.html#fig:hwycyl">5.2</a>：</li>
+</ol>
+<pre class="stata"><code>sc hwy cyl</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwycyl"></span>
+<img src="assets/hwycyl.png" alt="hwy 和 cyl 的关系" width="80%" />
+<p class="caption">
+图 5.2: hwy 和 cyl 的关系
+</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>如果你绘制 class 变量和 drv 变量的散点图会发生什么？为什么？</li>
+</ol>
+<pre class="stata"><code>sc class drv
+*&gt; string variables not allowed in varlist;
+*&gt; class is a string variable
+*&gt; r(109);</code></pre>
+<p>这是因为 Stata 绘图中，字符串变量无法直接被转换成数值变量，所以不能直接用于绘图，所以我们需要首先把字符串变量转换成数值变量再进行绘图，如图 <a href="section-25.html#fig:classnumdrvnum">5.3</a>：</p>
+<pre class="stata"><code>encode class, gen(classnum) label(class)
+encode drv, gen(drvnum) label(drv)
+sc classnum drvnum</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:classnumdrvnum"></span>
+<img src="assets/classnumdrvnum.png" alt="class 和 drv 的关系" width="80%" />
+<p class="caption">
+图 5.3: class 和 drv 的关系
+</p>
+</div>
+<p>我们还可以使用变量的赋值标签作为轴标签，如图 <a href="section-25.html#fig:classnumdrvnum2">5.4</a>：</p>
+<pre class="stata"><code>sc classnum drvnum, xlab(1 2 3, val) ylab(, val)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:classnumdrvnum2"></span>
+<img src="assets/classnumdrvnum2.png" alt="class 和 drv 的关系" width="80%" />
+<p class="caption">
+图 5.4: class 和 drv 的关系
+</p>
+</div>
+<p>这里使用了两个选项，xlab() 选项用于控制 x 轴的标签，<code>1 2 3</code> 表示 x 轴上只显示 <code>1 2 3</code> 三个标签，对应的赋值标签正好是 <code>4 f r</code>。val 是 xlab() 选项的选项，所以它的前面用逗号隔开，表示使用赋值标签作为轴标签。</p>
+</div>
+</div>
+<div id="section-31" class="section level2">
+<h2><span class="header-section-number">5.4</span> 散点图进阶</h2>
+<blockquote>
+<p>“The greatest value of a picture is when it forces us to notice what we never expected to see.” — John Tukey</p>
+</blockquote>
+<p>在图 <a href="section-25.html#fig:hwydispl2">5.5</a> 中，用红色突出的点似乎超过了线性趋势，这些车的里程数高于我们的预期，这是为什么？</p>
+<pre class="stata"><code>tw ///
+sc hwy displ if displ &lt; 5 | hwy &lt; 22 || ///
+sc hwy displ if displ &gt; 5 &amp; hwy &gt; 22, mc(red) ||, ///
+leg(off)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydispl2"></span>
+<img src="assets/hwydispl2.png" alt="排量与燃油效率关系中的一些异常值" width="80%" />
+<p class="caption">
+图 5.5: 排量与燃油效率关系中的一些异常值
+</p>
+</div>
+<p>这些异常值出现的一个可能的原因就是这些车中有混合动力车，检验这一猜想的办法就是查看每个 class 的 hwy，如图 <a href="section-25.html#fig:hwydispl3">5.6</a>：</p>
+<pre class="stata"><code>* 查看 class 有哪些值
+levelsof class
+* 可以使用 local() 选项将这些值存储为一个 local 变量
+levelsof class, local(class)
+* 我们可以针对 class 的每一个值绘制一个图层：
+tw ///
+sc hwy displ if class == &quot;2seater&quot; || ///
+sc hwy displ if class == &quot;compact&quot; || ///
+sc hwy displ if class == &quot;midsize&quot; || ///
+sc hwy displ if class == &quot;minivan&quot; || ///
+sc hwy displ if class == &quot;pickup&quot; || ///
+sc hwy displ if class == &quot;subcompact&quot; || ///
+sc hwy displ if class == &quot;suv&quot; ||, ///
+leg(order(1 &quot;2seater&quot; ///
+          2 &quot;compact&quot; ///
+          3 &quot;midsize&quot; ///
+          4 &quot;minivan&quot; ///
+          5 &quot;pickup&quot; ///
+          6 &quot;subcompact&quot; ///
+          7 &quot;suv&quot;) title(class))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydispl3"></span>
+<img src="assets/hwydispl3.png" alt="不同类型汽车排量与燃油效率的关系" width="80%" />
+<p class="caption">
+图 5.6: 不同类型汽车排量与燃油效率的关系
+</p>
+</div>
+<p>这里使用的是不同的散点样式表示不同图层，当然我们也可以使用不同的颜色表示，<code>colorscheme</code> 命令是个非常好用的调色选色命令，其调色板来源于： <a href="http://colorbrewer2.org/">ColorBrewer: Color Advice for Maps</a>，安装方式如下：</p>
+<pre class="stata"><code>net install colorscheme.pkg, from(&quot;https://github.com/matthieugomez/stata-colorscheme/raw/master/&quot;)</code></pre>
+<p>关于这个命令的使用，你可以参考其帮助文档（help colorscheme）或者我的博客文章： <a href="https://www.czxa.top/posts/16049/">colorscheme——调色选色命令</a>。</p>
+<p>我最喜欢的是 <code>Paired</code> 配色方案，如图 <a href="section-25.html#fig:Paired">5.7</a>：</p>
+<pre class="stata"><code>colorscheme 12, palette(Paired) display
+return list
+*&gt; macros:
+*&gt;     r(color1) : &quot;166 206 227&quot;
+*&gt;     r(color2) : &quot;031 120 180&quot;
+*&gt;     r(color3) : &quot;178 223 138&quot;
+*&gt;     r(color4) : &quot;051 160 044&quot;
+*&gt;     r(color5) : &quot;251 154 153&quot;
+*&gt;     r(color6) : &quot;227 026 028&quot;
+*&gt;     r(color7) : &quot;253 191 111&quot;
+*&gt;     r(color8) : &quot;255 127 000&quot;
+*&gt;     r(color9) : &quot;202 178 214&quot;
+*&gt;    r(color10) : &quot;106 061 154&quot;
+*&gt;    r(color11) : &quot;255 255 153&quot;
+*&gt;    r(color12) : &quot;177 089 040&quot;
+*&gt;     r(colors) : &quot;&quot;166 206 227&quot; &quot;031 120 180&quot;  &quot;178 223 138&quot;  &quot;051 160 044..&quot;</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:Paired"></span>
+<img src="assets/Paired.png" alt="Paired 配色方案" width="80%" />
+<p class="caption">
+图 5.7: Paired 配色方案
+</p>
+</div>
+<p>这里我们需要 7 种颜色，如图 <a href="section-25.html#fig:hwydispl4">5.8</a>：</p>
+<pre class="stata"><code>colorscheme 7, palette(Paired)
+tw ///
+sc hwy displ if class == &quot;2seater&quot;, mc(&quot;`r(color1)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;compact&quot;, mc(&quot;`r(color2)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;midsize&quot;, mc(&quot;`r(color3)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;minivan&quot;, mc(&quot;`r(color4)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;pickup&quot;, mc(&quot;`r(color5)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;subcompact&quot;, mc(&quot;`r(color6)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;suv&quot;, mc(&quot;`r(color7)&#39;&quot;) ms(o) ||, ///
+leg(order(1 &quot;2seater&quot; ///
+          2 &quot;compact&quot; ///
+          3 &quot;midsize&quot; ///
+          4 &quot;minivan&quot; ///
+          5 &quot;pickup&quot; ///
+          6 &quot;subcompact&quot; ///
+          7 &quot;suv&quot;) title(class))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydispl4"></span>
+<img src="assets/hwydispl4.png" alt="不同类型汽车排量与燃油效率的关系" width="80%" />
+<p class="caption">
+图 5.8: 不同类型汽车排量与燃油效率的关系
+</p>
+</div>
+<p>当然你也可以用散点的大小表示不同的图层，如图 <a href="section-25.html#fig:hwydispl5">5.9</a>：</p>
+<pre class="stata"><code>colorscheme 7, palette(Set2)
+tw ///
+sc hwy displ if class == &quot;2seater&quot;, mc(&quot;`r(color1)&#39;&quot;) ms(o) msize(*1) || ///
+sc hwy displ if class == &quot;compact&quot;, mc(&quot;`r(color2)&#39;&quot;) ms(o) msize(*1.5) || ///
+sc hwy displ if class == &quot;midsize&quot;, mc(&quot;`r(color3)&#39;&quot;) ms(o) msize(*2) || ///
+sc hwy displ if class == &quot;minivan&quot;, mc(&quot;`r(color4)&#39;&quot;) ms(o) msize(*2.5) || ///
+sc hwy displ if class == &quot;pickup&quot;, mc(&quot;`r(color5)&#39;&quot;) ms(o) msize(*3) || ///
+sc hwy displ if class == &quot;subcompact&quot;, mc(&quot;`r(color6)&#39;&quot;) ms(o) msize(*3.5) || ///
+sc hwy displ if class == &quot;suv&quot;, mc(&quot;`r(color7)&#39;&quot;) ms(o) msize(*4) ||, ///
+leg(order(1 &quot;2seater&quot; ///
+          2 &quot;compact&quot; ///
+          3 &quot;midsize&quot; ///
+          4 &quot;minivan&quot; ///
+          5 &quot;pickup&quot; ///
+          6 &quot;subcompact&quot; ///
+          7 &quot;suv&quot;) title(class))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydispl5"></span>
+<img src="assets/hwydispl5.png" alt="不同类型汽车排量与燃油效率的关系" width="80%" />
+<p class="caption">
+图 5.9: 不同类型汽车排量与燃油效率的关系
+</p>
+</div>
+<p>最后 Stata15 在绘图方面引入了一个新特性就是可以为图层设置透明度了！关于透明度的使用可以参考 Stata 官网上的相关介绍和我的博客文章： <a href="https://www.czxa.top/posts/44086/">Stata15绘图的新功能：设置图形的透明度</a>，图 <a href="section-25.html#fig:hwydispl6">5.10</a>展示了使用透明度的效果：</p>
+<pre class="stata"><code>/* 左图 */
+tw ///
+sc hwy displ if class == &quot;2seater&quot; || ///
+sc hwy displ if class == &quot;compact&quot; || ///
+sc hwy displ if class == &quot;midsize&quot; || ///
+sc hwy displ if class == &quot;minivan&quot; || ///
+sc hwy displ if class == &quot;pickup&quot; || ///
+sc hwy displ if class == &quot;subcompact&quot; || ///
+sc hwy displ if class == &quot;suv&quot; ||, ///
+leg(order(1 &quot;2seater&quot; ///
+          2 &quot;compact&quot; ///
+          3 &quot;midsize&quot; ///
+          4 &quot;minivan&quot; ///
+          5 &quot;pickup&quot; ///
+          6 &quot;subcompact&quot; ///
+          7 &quot;suv&quot;) title(class)) name(p1) nodraw
+/* 右图 */
+tw ///
+sc hwy displ if class == &quot;2seater&quot;, mc(%90) ms(o) || ///
+sc hwy displ if class == &quot;compact&quot;, mc(%80) ms(o) || ///
+sc hwy displ if class == &quot;midsize&quot;, mc(%70) ms(o) || ///
+sc hwy displ if class == &quot;minivan&quot;, mc(%60) ms(o) || ///
+sc hwy displ if class == &quot;pickup&quot;, mc(%50) ms(o) || ///
+sc hwy displ if class == &quot;subcompact&quot;, mc(%40) ms(o) || ///
+sc hwy displ if class == &quot;suv&quot;, mc(%30) ms(o) ||, ///
+leg(order(1 &quot;2seater&quot; ///
+          2 &quot;compact&quot; ///
+          3 &quot;midsize&quot; ///
+          4 &quot;minivan&quot; ///
+          5 &quot;pickup&quot; ///
+          6 &quot;subcompact&quot; ///
+          7 &quot;suv&quot;) title(class)) name(p2) nodraw
+/* 合并 */
+gr combine p1 p2</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydispl6"></span>
+<img src="assets/hwydispl6.png" alt="不同类型汽车排量与燃油效率的关系" width="100%" />
+<p class="caption">
+图 5.10: 不同类型汽车排量与燃油效率的关系
+</p>
+</div>
+<p>Stata 绘图中的散点样式如图 <a href="section-25.html#fig:symbolpalette">5.11</a>：</p>
+<pre class="stata"><code>palette symbolpalette</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:symbolpalette"></span>
+<img src="assets/symbolpalette.png" alt="Stata 绘图中的散点样式" width="80%" />
+<p class="caption">
+图 5.11: Stata 绘图中的散点样式
+</p>
+</div>
+</div>
+<div id="section-32" class="section level2">
+<h2><span class="header-section-number">5.5</span> 分面</h2>
+<p>把多个图层叠加在一起就会产生相互重叠的问题，因此我们有时候会选择将不同的图层分开绘制，也就是分面，如图 <a href="section-25.html#fig:hwydisplbyclass">5.12</a>：</p>
+<pre class="stata"><code>sc hwy displ, by(class)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydisplbyclass"></span>
+<img src="assets/hwydisplbyclass.png" alt="不同型号汽车排量与燃油效率的关系" width="100%" />
+<p class="caption">
+图 5.12: 不同型号汽车排量与燃油效率的关系
+</p>
+</div>
+<p>我们也可以使用两个变量的组合进行分面，如图 <a href="section-25.html#fig:hwydisplbyfrvcyl">5.13</a>：</p>
+<pre class="stata"><code>sc hwy displ, by(drv cyl)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydisplbyfrvcyl"></span>
+<img src="assets/hwydisplbyfrvcyl.png" alt="不同drv和cyl的汽车排量与燃油效率的关系" width="100%" />
+<p class="caption">
+图 5.13: 不同drv和cyl的汽车排量与燃油效率的关系
+</p>
+</div>
+<p>我们还可以自定义分面图的排列，例如全部排列在一行，如图 <a href="section-25.html#fig:hwydisplbyclass2">5.14</a>：</p>
+<pre class="stata"><code>sc hwy displ, by(class, row(1))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydisplbyclass2"></span>
+<img src="assets/hwydisplbyclass2.png" alt="不同型号汽车排量与燃油效率的关系" width="100%" />
+<p class="caption">
+图 5.14: 不同型号汽车排量与燃油效率的关系
+</p>
+</div>
+<p>经常有小伙伴在绘制分面图的时候想把左下角的 <code>Graphs by xx</code> 去掉，这个可以通过 <code>by()</code> 的子选项去除：</p>
+<pre class="stata"><code>sc hwy displ, by(class, note(&quot;&quot;))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:hwydisplbyclass3"></span>
+<img src="assets/hwydisplbyclass3.png" alt="不同型号汽车排量与燃油效率的关系" width="100%" />
+<p class="caption">
+图 5.15: 不同型号汽车排量与燃油效率的关系
+</p>
+</div>
+</div>
+<div id="section-33" class="section level2">
+<h2><span class="header-section-number">5.6</span> 几何对象</h2>
+<p>观察图 <a href="section-25.html#fig:lpolychwydisp">5.16</a> 中的两个图层，什么相似的地方？</p>
+<pre class="stata"><code>tw ///
+sc hwy displ || ///
+lpolyci hwy disp</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:lpolychwydisp"></span>
+<img src="assets/lpolychwydisp.png" alt="汽车排量与燃油效率的关系散点图与多项式拟合" width="90%" />
+<p class="caption">
+图 5.16: 汽车排量与燃油效率的关系散点图与多项式拟合
+</p>
+</div>
+<p>可以看出两个图层有着相同的x和y变量，也正是因此我们才能把这两个图层叠加在一起。但是一个是用散点表示两者的关系，一个是用多项式拟合线表示两者的关系，也就是说，两个图层使用了不同的几何对象。</p>
+<p>人们经常会根据实际需要使用不同的几何对象表示数据，例如展示数据分布常使用直方图、箱线图，展示走势常使用线图等等。</p>
+<p>图 <a href="section-25.html#fig:lpolycibydrv">5.17</a> 展示了针对不同的 drv 值绘制不同的曲线拟合：</p>
+<pre class="stata"><code>tw ///
+lpolyci hwy displ if drv == &quot;4&quot;, lp(solid) || ///
+lpolyci hwy displ if drv == &quot;f&quot;, lp(dash) || ///
+lpolyci hwy displ if drv == &quot;r&quot;, lp(shortdash) ||, ///
+leg(order(2 &quot;4&quot; 4 &quot;f&quot; 6 &quot;r&quot;) title(drv))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:lpolycibydrv"></span>
+<img src="assets/lpolycibydrv.png" alt="不同 drv 的汽车排量与燃油效率的关系" width="90%" />
+<p class="caption">
+图 5.17: 不同 drv 的汽车排量与燃油效率的关系
+</p>
+</div>
+<p>这里需要补充的是，Stata中的线型有以下几种，如图 <a href="section-25.html#fig:linepalette">5.18</a>：</p>
+<pre class="stata"><code>palette linepalette</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:linepalette"></span>
+<img src="assets/linepalette.png" alt="Stata 中的线型" width="90%" />
+<p class="caption">
+图 5.18: Stata 中的线型
+</p>
+</div>
+<p>为了更容易区分，我们再对不同的图层使用不同的颜色，如图 <a href="section-25.html#fig:lpolycibydrv2">5.19</a>：</p>
+<pre class="stata"><code>colorscheme 3, palette(&quot;Set2&quot;)
+return list
+tw ///
+lpolyci hwy displ if drv == &quot;4&quot;, lc(&quot;`r(color1)&#39;&quot;) || ///
+lpolyci hwy displ if drv == &quot;f&quot;, lc(&quot;`r(color2)&#39;&quot;) || ///
+lpolyci hwy displ if drv == &quot;r&quot;, lc(&quot;`r(color3)&#39;&quot;) || ///
+sc hwy displ if drv == &quot;4&quot;, mc(&quot;`r(color1)&#39;&quot;) || ///
+sc hwy displ if drv == &quot;f&quot;, mc(&quot;`r(color2)&#39;&quot;) || ///
+sc hwy displ if drv == &quot;r&quot;, mc(&quot;`r(color3)&#39;&quot;) ||, ///
+leg(order(2 &quot;4&quot; 4 &quot;f&quot; 6 &quot;r&quot;) title(drv))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:lpolycibydrv2"></span>
+<img src="assets/lpolycibydrv2.png" alt="不同 drv 的汽车排量与燃油效率的关系" width="90%" />
+<p class="caption">
+图 5.19: 不同 drv 的汽车排量与燃油效率的关系
+</p>
+</div>
+<p>Stata 的绘图功能是比较强大的，事实上我觉得如果一个绘图系统能够绘制不同颜色的点、线和区域，那么它就能够绘制任何图，而绘图的难易程度取决于绘图函数的设计。</p>
+<p>图 <a href="section-25.html#fig:lpolycihwydispl">5.20</a> 展示了不同 class 的汽车排量与燃油效率的关系：</p>
+<pre class="stata"><code>colorscheme 8, palette(Set2)
+tw ///
+sc hwy displ if class == &quot;2seater&quot;, mc(&quot;`r(color1)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;compact&quot;, mc(&quot;`r(color2)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;midsize&quot;, mc(&quot;`r(color3)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;minivan&quot;, mc(&quot;`r(color4)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;pickup&quot;, mc(&quot;`r(color5)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;subcompact&quot;, mc(&quot;`r(color6)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;suv&quot;, mc(&quot;`r(color7)&#39;&quot;) ms(o) || ///
+lpolyci hwy displ, lc(&quot;`r(color8)&#39;&quot;) ||, ///
+leg(order(1 &quot;2seater&quot; ///
+          2 &quot;compact&quot; ///
+          3 &quot;midsize&quot; ///
+          4 &quot;minivan&quot; ///
+          5 &quot;pickup&quot; ///
+          6 &quot;subcompact&quot; ///
+          7 &quot;suv&quot;) title(class))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:lpolycihwydispl"></span>
+<img src="assets/lpolycihwydispl.png" alt="不同 class 的汽车排量与燃油效率的关系" width="90%" />
+<p class="caption">
+图 5.20: 不同 class 的汽车排量与燃油效率的关系
+</p>
+</div>
+<p>当然也可以对 class 的一个子集进行多项式拟合，如图 <a href="section-25.html#fig:lpolycihwydispl2">5.21</a>：</p>
+<pre class="stata"><code>colorscheme 8, palette(Set2)
+tw ///
+sc hwy displ if class == &quot;2seater&quot;, mc(&quot;`r(color1)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;compact&quot;, mc(&quot;`r(color2)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;midsize&quot;, mc(&quot;`r(color3)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;minivan&quot;, mc(&quot;`r(color4)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;pickup&quot;, mc(&quot;`r(color5)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;subcompact&quot;, mc(&quot;`r(color6)&#39;&quot;) ms(o) || ///
+sc hwy displ if class == &quot;suv&quot;, mc(&quot;`r(color7)&#39;&quot;) ms(o) || ///
+lpolyci hwy displ if class == &quot;subcompact&quot;, lc(&quot;`r(color8)&#39;&quot;) ||, ///
+leg(order(1 &quot;2seater&quot; ///
+          2 &quot;compact&quot; ///
+          3 &quot;midsize&quot; ///
+          4 &quot;minivan&quot; ///
+          5 &quot;pickup&quot; ///
+          6 &quot;subcompact&quot; ///
+          7 &quot;suv&quot;) title(class))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:lpolycihwydispl2"></span>
+<img src="assets/lpolycihwydispl2.png" alt="不同 class 的汽车排量与燃油效率的关系" width="90%" />
+<p class="caption">
+图 5.21: 不同 class 的汽车排量与燃油效率的关系
+</p>
+</div>
+</div>
+<div id="section-34" class="section level2">
+<h2><span class="header-section-number">5.7</span> 统计变换</h2>
+<p>Stata 绘制直方图的命令是 <code>histogram</code> ，简写为 <code>hist</code>，如图 <a href="section-25.html#fig:histcut">5.22</a>：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+hist cut, barwidth(0.8) xlab(, val) freq</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histcut"></span>
+<img src="assets/histcut.png" alt="钻石切工分布直方图" width="80%" />
+<p class="caption">
+图 5.22: 钻石切工分布直方图
+</p>
+</div>
+<p>我们可以注意到，图 <a href="section-25.html#fig:histcut">5.22</a> 中的横轴是 cut 变量，纵轴是 cut 变量各个取值的分布，而我们主要到数据集中是没有这个变量的，显然这个变量是 hist 命令计算过程中生成的，下面的语句展示了如何对 cut 变量的各个取值进行计数然后绘制直方图，如图 <a href="section-25.html#fig:barcut">5.23</a>：</p>
+<pre class="stata"><code>contract cut
+tw bar _freq cut, barwidth(0.8) xlab(, val)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:barcut"></span>
+<img src="assets/barcut.png" alt="钻石切工分布直方图" width="80%" />
+<p class="caption">
+图 5.23: 钻石切工分布直方图
+</p>
+</div>
+<p>contract 命令能够快速的对变量进行计数，详细用法可以参考其帮助文档（help contract）或者我的博客文章： <a href="https://www.czxa.top/posts/1170/#contract%E5%91%BD%E4%BB%A4">Stata旧笔记整理（八）#contract命令</a>。</p>
+<p>contract 命令运行之后会生成一个新的数据集，如表 <a href="section-25.html#tab:cut">5.2</a>：</p>
+<table>
+<caption><span id="tab:cut">表 5.2: </span>contract cut 的结果</caption>
+<thead>
+<tr class="header">
+<th align="left">cut</th>
+<th align="right">_freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Fair</td>
+<td align="right">1610</td>
+</tr>
+<tr class="even">
+<td align="left">Good</td>
+<td align="right">4906</td>
+</tr>
+<tr class="odd">
+<td align="left">Very Good</td>
+<td align="right">12082</td>
+</tr>
+<tr class="even">
+<td align="left">Premium</td>
+<td align="right">13791</td>
+</tr>
+<tr class="odd">
+<td align="left">Ideal</td>
+<td align="right">21551</td>
+</tr>
+</tbody>
+</table>
+<p>通过这个过程你就会发现所谓的 <code>统计变换</code> 不过就是把一系列的计算过程封装在命令中，并不难懂。</p>
+<p><code>hist</code> 命令的纵轴也可以为频率（Density），去掉 freq 选项即可，如图 <a href="section-25.html#fig:histcut2">5.24</a>：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+hist cut, barwidth(0.8) xlab(, val)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histcut2"></span>
+<img src="assets/histcut2.png" alt="钻石切工分布直方图" width="80%" />
+<p class="caption">
+图 5.24: 钻石切工分布直方图
+</p>
+</div>
+<p>统计变换经常是件苦力活，因为很多时候我们需要先计算我们需要进行的统计变换，然后再把变换后的结果整理好读入Stata再绘图，<code>collapse</code> 是一个非常好用的命令，可以帮我们简化这个过程，例如我想展示不同cut值depth变量的范围和中位数：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+collapse    (min) depthmin = depth ///
+            (median) depthmedian = depth ///
+            (max) depthmax = depth, by(cut)</code></pre>
+<p>这个时候得到的结果见表 <a href="section-25.html#tab:depthmmm">5.3</a>：</p>
+<table>
+<caption><span id="tab:depthmmm">表 5.3: </span>collapse depth 的结果</caption>
+<thead>
+<tr class="header">
+<th align="left">cut</th>
+<th align="right">depthmin</th>
+<th align="right">depthmedian</th>
+<th align="right">depthmax</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Fair</td>
+<td align="right">43.0</td>
+<td align="right">65.0</td>
+<td align="right">79.0</td>
+</tr>
+<tr class="even">
+<td align="left">Good</td>
+<td align="right">54.3</td>
+<td align="right">63.4</td>
+<td align="right">67.0</td>
+</tr>
+<tr class="odd">
+<td align="left">Very Good</td>
+<td align="right">56.8</td>
+<td align="right">62.1</td>
+<td align="right">64.9</td>
+</tr>
+<tr class="even">
+<td align="left">Premium</td>
+<td align="right">58.0</td>
+<td align="right">61.4</td>
+<td align="right">63.0</td>
+</tr>
+<tr class="odd">
+<td align="left">Ideal</td>
+<td align="right">43.0</td>
+<td align="right">61.8</td>
+<td align="right">66.7</td>
+</tr>
+</tbody>
+</table>
+<p>然后我们再绘图，绘图结果见图 <a href="section-25.html#fig:depth3m">5.25</a>：</p>
+<pre class="stata"><code>tw ///
+rspike depthmax depthmin cut || ///
+sc depthmedian cut, xlab(, val) ms(O) mc(black) ||, ///
+leg(off)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:depth3m"></span>
+<img src="assets/depth3m.png" alt="钻石深度的分布" width="80%" />
+<p class="caption">
+图 5.25: 钻石深度的分布
+</p>
+</div>
+</div>
+<div id="section-35" class="section level2">
+<h2><span class="header-section-number">5.8</span> 位置调整</h2>
+<p>通过不同的颜色设置，我们可以得到下面的图 <a href="section-25.html#fig:barcutmulticolor">5.26</a> 和图 <a href="section-25.html#fig:barcutmulticolor2">5.27</a>：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+contract cut
+colorscheme 5, palette(Set2)
+tw ///
+bar _freq cut if cut == 1, fc(&quot;`r(color1)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 2, fc(&quot;`r(color2)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 3, fc(&quot;`r(color3)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 4, fc(&quot;`r(color4)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 5, fc(&quot;`r(color5)&#39;&quot;) ///
+barwidth(0.8) xlab(, val) leg(off)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:barcutmulticolor"></span>
+<img src="assets/barcutmulticolor.png" alt="钻石切工的分布" width="80%" />
+<p class="caption">
+图 5.26: 钻石切工的分布
+</p>
+</div>
+<pre class="stata"><code>sysuse diamonds, clear
+contract cut
+colorscheme 5, palette(Set1)
+tw ///
+bar _freq cut if cut == 1, lc(&quot;`r(color1)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 2, lc(&quot;`r(color2)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 3, lc(&quot;`r(color3)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 4, lc(&quot;`r(color4)&#39;&quot;) barwidth(0.8) || ///
+bar _freq cut if cut == 5, lc(&quot;`r(color5)&#39;&quot;) ///
+barwidth(0.8) xlab(, val) leg(off)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:barcutmulticolor2"></span>
+<img src="assets/barcutmulticolor2.png" alt="钻石切工的分布" width="80%" />
+<p class="caption">
+图 5.27: 钻石切工的分布
+</p>
+</div>
+<p>两幅图的区别就在于，第一幅图是使用 <code>fc()</code> 选项，这个选项控制对直方条的填充色，第二幅图使用的是 <code>lc()</code> 选项，这个选项控制直方条边缘的颜色。</p>
+<p>实际上，上面两幅图关于颜色的设置都是没有什么实际意义的，只是让图看起来更加炫酷。但是有时候我们想知道例如“我们班的男生和女生生源地分布”这种问题的答案，这个时候使用颜色填充就有意义了，例如图 <a href="section-25.html#fig:stackcutclarity">5.28</a>钻石不同切工的克拉分布：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+colorscheme 8, palette(Paired)
+gr bar, over(clarity) over(cut) ///
+    stack asyvars yti(count) ///
+    leg(ti(clarity)) ///
+    bar(1, color(&quot;`r(color1)&#39;&quot;)) ///
+    bar(2, color(&quot;`r(color2)&#39;&quot;)) ///
+    bar(3, color(&quot;`r(color3)&#39;&quot;)) ///
+    bar(4, color(&quot;`r(color4)&#39;&quot;)) ///
+    bar(5, color(&quot;`r(color5)&#39;&quot;)) ///
+    bar(6, color(&quot;`r(color6)&#39;&quot;)) ///
+    bar(7, color(&quot;`r(color7)&#39;&quot;)) ///
+    bar(8, color(&quot;`r(color8)&#39;&quot;))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:stackcutclarity"></span>
+<img src="assets/stackcutclarity.png" alt="钻石不同切工的克拉分布" width="80%" />
+<p class="caption">
+图 5.28: 钻石不同切工的克拉分布
+</p>
+</div>
+<p>有时候我们会绘制图 <a href="section-25.html#fig:histautoprice">5.29</a>：</p>
+<pre class="stata"><code>sysuse auto, clear
+tw ///
+hist price if for || ///
+hist price if !for</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histautoprice"></span>
+<img src="assets/histautoprice.png" alt="国产车和进口车的价格分布" width="80%" />
+<p class="caption">
+图 5.29: 国产车和进口车的价格分布
+</p>
+</div>
+<p>这个图的问题就是相互重叠问题很严重，为此我们可以采取下面两种方法解决这个问题，第一种是将位于上层的图层设置为透明的，如图 <a href="section-25.html#fig:histautoprice2">5.30</a>：</p>
+<pre class="stata"><code>tw ///
+hist price if for, fc(red) || ///
+hist price if !for, fc(green%50) ///
+    leg(order(1 &quot;进口车&quot; 2 &quot;国产车&quot;))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histautoprice2"></span>
+<img src="assets/histautoprice2.png" alt="国产车和进口车的价格分布" width="80%" />
+<p class="caption">
+图 5.30: 国产车和进口车的价格分布
+</p>
+</div>
+<p>第二中方法是不再给柱形图填充颜色，如图 <a href="section-25.html#fig:histautoprice3">5.31</a>：</p>
+<pre class="stata"><code>tw ///
+hist price if for, fc(red) lc(red) || ///
+hist price if !for, color(none) lc(green) ///
+    leg(order(1 &quot;进口车&quot; 2 &quot;国产车&quot;))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:histautoprice3"></span>
+<img src="assets/histautoprice3.png" alt="国产车和进口车的价格分布" width="80%" />
+<p class="caption">
+图 5.31: 国产车和进口车的价格分布
+</p>
+</div>
+<p>位置调整有三种，用 ggplot2 的话来说，分别是 <code>identity</code>、<code>fill</code> 和 <code>dodge</code>。刚刚绘制的图 <a href="section-25.html#fig:stackcutclarity">5.28</a>就是 <code>identity</code> 模式。除此之外，<code>fill</code> 模式为，如图 <a href="section-25.html#fig:percentcutclarity">5.32</a>：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+gen id = _n
+colorscheme 8, palette(Paired)
+gr bar (count) id, over(clarity) over(cut) ///
+    stack asyvars yti(count) ///
+    leg(ti(clarity)) ///
+    bar(1, color(&quot;`r(color1)&#39;&quot;)) ///
+    bar(2, color(&quot;`r(color2)&#39;&quot;)) ///
+    bar(3, color(&quot;`r(color3)&#39;&quot;)) ///
+    bar(4, color(&quot;`r(color4)&#39;&quot;)) ///
+    bar(5, color(&quot;`r(color5)&#39;&quot;)) ///
+    bar(6, color(&quot;`r(color6)&#39;&quot;)) ///
+    bar(7, color(&quot;`r(color7)&#39;&quot;)) ///
+    bar(8, color(&quot;`r(color8)&#39;&quot;)) ///
+    percent</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:percentcutclarity"></span>
+<img src="assets/percentcutclarity.png" alt="钻石不同切工的克拉分布" width="80%" />
+<p class="caption">
+图 5.32: 钻石不同切工的克拉分布
+</p>
+</div>
+<p>最后，<code>dodge</code> 模式为，如图 <a href="section-25.html#fig:dodgecutclarity">5.33</a>：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+gen id = _n
+colorscheme 8, palette(Paired)
+gr bar (count) id, over(clarity) over(cut) ///
+    asyvars yti(count) ///
+    leg(ti(clarity)) ///
+    bar(1, color(&quot;`r(color1)&#39;&quot;)) ///
+    bar(2, color(&quot;`r(color2)&#39;&quot;)) ///
+    bar(3, color(&quot;`r(color3)&#39;&quot;)) ///
+    bar(4, color(&quot;`r(color4)&#39;&quot;)) ///
+    bar(5, color(&quot;`r(color5)&#39;&quot;)) ///
+    bar(6, color(&quot;`r(color6)&#39;&quot;)) ///
+    bar(7, color(&quot;`r(color7)&#39;&quot;)) ///
+    bar(8, color(&quot;`r(color8)&#39;&quot;))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:dodgecutclarity"></span>
+<img src="assets/dodgecutclarity.png" alt="钻石不同切工的克拉分布" width="80%" />
+<p class="caption">
+图 5.33: 钻石不同切工的克拉分布
+</p>
+</div>
+<p>其它类型的图其实也有位置的调整，不过不如直方图有用，例如散点图增加扰动，如图 <a href="section-25.html#fig:scjitter">5.34</a>：</p>
+<pre class="stata"><code>sysuse mpg, clear
+sc hwy displ, name(p1, replace) ti(没有添加散点扰动)
+sc hwy displ, name(p2, replace) jitter(3)  ti(添加了散点扰动)
+gr combine p1 p2</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:scjitter"></span>
+<img src="assets/scjitter.png" alt="增加散点扰动的效果图" width="80%" />
+<p class="caption">
+图 5.34: 增加散点扰动的效果图
+</p>
+</div>
+<p>很容易理解，增加散点扰动也是缓解散点重叠问题的一种办法。前面的使用透明度也是一种方法，如图 <a href="section-25.html#fig:scopc">5.35</a>。</p>
+<div class="figure" style="text-align: center"><span id="fig:scopc"></span>
+<img src="assets/scopc.png" alt="使用透明度的效果图" width="80%" />
+<p class="caption">
+图 5.35: 使用透明度的效果图
+</p>
+</div>
+<p>这里再介绍两种减缓散点重叠问题的方法：</p>
+<p>方法1: 使用 flower命令，如图 <a href="section-25.html#fig:flower">5.36</a>：</p>
+<pre class="stata"><code>* 安装：
+ssc install flower
+flower hwy displ</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:flower"></span>
+<img src="assets/flower.png" alt="使用太阳花的花瓣数量表示重叠程度" width="80%" />
+<p class="caption">
+图 5.36: 使用太阳花的花瓣数量表示重叠程度
+</p>
+</div>
+<p>实际上，Stata官方也提供了绘制太阳花的命令，如图 <a href="section-25.html#fig:sunflower">5.37</a>：</p>
+<pre class="stata"><code>sunflower hwy displ
+*&gt; Bin width          =       .36
+*&gt; Bin height         =   2.65899
+*&gt; Bin aspect ratio   =   6.39655
+*&gt; Max obs in a bin   =        12
+*&gt; Light              =         3
+*&gt; Dark               =        13
+*&gt; X-center           =       3.3
+*&gt; Y-center           =        24
+*&gt; Petal weight       =         1
+*&gt; ------------------------------------------------------------------
+*&gt;      flower      petal     No. of     No. of  estimated     actual
+*&gt;        type     weight     petals    flowers       obs.       obs.
+*&gt; ------------------------------------------------------------------
+*&gt;        none                                          46         46
+*&gt;       light          1          3          6         18         18
+*&gt;       light          1          4          7         28         28
+*&gt;       light          1          5          8         40         40
+*&gt;       light          1          6          2         12         12
+*&gt;       light          1          7          3         21         21
+*&gt;       light          1          8          2         16         16
+*&gt;       light          1          9          1          9          9
+*&gt;       light          1         10          1         10         10
+*&gt;       light          1         11          2         22         22
+*&gt;       light          1         12          1         12         12
+*&gt; ------------------------------------------------------------------
+*&gt;                                                     234        234</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:sunflower"></span>
+<img src="assets/sunflower.png" alt="使用太阳花的花瓣数量表示重叠程度" width="80%" />
+<p class="caption">
+图 5.37: 使用太阳花的花瓣数量表示重叠程度
+</p>
+</div>
+<p>另一种方法是使用 <a href="https://github.com/haghish">E. F. Haghish</a> 开发的 <a href="https://github.com/haghish/neat">neat</a> 命令，如图 <a href="section-25.html#fig:neatscatter">5.38</a>：</p>
+<pre class="stata"><code>* 安装 neat 命令
+github install haghish/neat, replace
+sysuse mpg, clear
+neat hwy displ
+sc hwy displ</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:neatscatter"></span>
+<img src="assets/neatscatter.png" alt="使用太阳花的花瓣数量表示重叠程度" width="80%" />
+<p class="caption">
+图 5.38: 使用太阳花的花瓣数量表示重叠程度
+</p>
+</div>
+<p>需要注意的是，neat并不是绘图的命令，而是一个修改数据的命令。</p>
+<p>关于 neat 命令的详细使用介绍可以参考其 GitHub 仓库： <a href="https://github.com/haghish/neat">haghish/neat</a></p>
+</div>
+<div id="section-36" class="section level2">
+<h2><span class="header-section-number">5.9</span> 坐标系统</h2>
+<p>Stata 绘图中坐标系统的调整主要是横纵坐标的交换，如图 <a href="section-25.html#fig:boxcombine">5.39</a>：</p>
+<pre class="stata"><code>sysuse mpg, clear
+gr box hwy, over(class) ti(&quot;绘图命令：gr box hwy, over(class)&quot;) ///
+    name(p1, replace)
+gr hbox hwy, over(class)  ti(&quot;绘图命令：gr hbox hwy, over(class)&quot;) ///
+    name(p2, replace)
+gr combine p1 p2</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:boxcombine"></span>
+<img src="assets/boxcombine.png" alt="竖直箱线图与水平箱线图" width="80%" />
+<p class="caption">
+图 5.39: 竖直箱线图与水平箱线图
+</p>
+</div>
+<p>另一种常用的坐标系调整是纵轴和横轴尺度的比例，使用 <code>aspectratio()</code> 选项调整，例如我想设置纵轴和横轴的比例是 1:2，如图 <a href="section-25.html#fig:aspscatter">5.40</a>：</p>
+<pre class="stata"><code>sysuse mpg, clear
+sc hwy displ, aspect(0.5)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:aspscatter"></span>
+<img src="assets/aspscatter.png" alt="aspectratio() 选项的使用" width="80%" />
+<p class="caption">
+图 5.40: aspectratio() 选项的使用
+</p>
+</div>
+<p>Stata 中并没有直接的坐标系转换机制（这就不像 ggplot2 中那么方便了），但是 Stata 中有绘制各种图的命令，以上展示的图基本都是基于笛卡尔坐标系的，基于极坐标系的饼图在 Stata 中可以直接使用 pie 命令绘制，如图 <a href="section-25.html#fig:barpluspie">5.41</a>：</p>
+<pre class="stata"><code>sysuse diamonds, clear
+contract cut
+colorscheme 5, palette(Paired)
+tw ///
+bar _freq cut if cut == 1, horizontal fc(&quot;`r(color1)&#39;&quot;) lc(&quot;`r(color1)&#39;&quot;) || ///
+bar _freq cut if cut == 2, horizontal fc(&quot;`r(color2)&#39;&quot;) lc(&quot;`r(color2)&#39;&quot;) || ///
+bar _freq cut if cut == 3, horizontal fc(&quot;`r(color3)&#39;&quot;) lc(&quot;`r(color3)&#39;&quot;) || ///
+bar _freq cut if cut == 4, horizontal fc(&quot;`r(color4)&#39;&quot;) lc(&quot;`r(color4)&#39;&quot;) || ///
+bar _freq cut if cut == 5, horizontal fc(&quot;`r(color5)&#39;&quot;) lc(&quot;`r(color5)&#39;&quot;) ///
+    ylab(, val) name(p1, replace) nodraw leg(off)
+
+sysuse diamonds, clear
+colorscheme 5, palette(Paired)
+gr pie, over(cut) ///
+    pie(1, color(&quot;`r(color1)&#39;&quot;)) ///
+    pie(2, color(&quot;`r(color2)&#39;&quot;)) ///
+    pie(3, color(&quot;`r(color3)&#39;&quot;)) ///
+    pie(4, color(&quot;`r(color4)&#39;&quot;)) ///
+    pie(5, color(&quot;`r(color5)&#39;&quot;)) ///
+    name(p2, replace) leg(off) ///
+    pl(1 name) ///
+    pl(2 name) ///
+    pl(3 name) ///
+    pl(4 name) ///
+    pl(5 name) nodraw
+gr combine p1 p2</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:barpluspie"></span>
+<img src="assets/barpluspie.png" alt="graph bar 和 graph pie 命令的使用" width="80%" />
+<p class="caption">
+图 5.41: graph bar 和 graph pie 命令的使用
+</p>
+</div>
+<p>这里我们使用了一个新的选项 <code>horizontal</code>，这个选项控制图像的水平显示。</p>
+<p>最后我们再回到 <code>aspectratio()</code> 选项上，经常我们需要在图像中添加一条45线，例如绘制 QQ 图的时候就需要添加一条45度线，这个时候使用 <code>aspect(1)</code> 可以保证这条45度线是真的45度线，如图 <a href="section-25.html#fig:qnorm">5.42</a>：</p>
+<pre class="stata"><code>qnorm depth, aspect(1) xlab(40(10)80) ylab(40(10)80)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:qnorm"></span>
+<img src="assets/qnorm.png" alt="depth 变量的 QQ 图" width="80%" />
+<p class="caption">
+图 5.42: depth 变量的 QQ 图
+</p>
+</div>
+
+</div>
+</div>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'HS0fE2GH92TyPjSpxeuEpr9P-gzGzoHsz',
+        app_key: 'hyvGUifU6e34ODKmahBUtoN6',
+        placeholder: '在这里评论～记得留下邮箱哈，这样有回复的时候会有邮件通知。',
+        avatar: 'monsterid',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/',
+        pageSize: '2'
+    });
+</script>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-23.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-37.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/czxa/stata4ds/edit/master/04-dvs.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Stata_for_Data_Science.pdf", "Stata_for_Data_Science.epub"],
+"toc": {
+"collapse": "none"
+},
+"output_dir": "docs"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
