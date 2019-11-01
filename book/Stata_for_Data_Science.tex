@@ -203,7 +203,7 @@
 
 首先你需要在你的 Windows 上或者 Mac 上安装 Stata15，由于作者的电脑是 Mac 系统，所以本书的内容尚未在 Windows 上测试。如果你运行出错，请联系作者。
 
-另外，我再向你推荐一个非常好用的代码编辑器：\href{http://www.sublimetext.com/}{\textbf{Sublime Text 3}}，Stata 的安装和 Sublime Text3 的配置教程网上有很多，作者的个人网站上也有一些：\href{https://www.czxa.top/posts/59313/}{Stata安装与Sublime Text3配置教程}，因此这里不再赘述。
+另外，我再向你推荐一个非常好用的代码编辑器：\href{http://www.sublimetext.com/}{\textbf{Sublime Text 3}}，Stata 的安装和 Sublime Text3 的配置教程网上有很多，因此这里不再赘述。
 
 为了方便本书的阅读，作者正在编写一个 Stata 的命令包，你可以运行下面的命令安装：
 
@@ -258,12 +258,12 @@ sysuse auto, clear
 \caption{Creative Commons Attribution-NonCommercial-NoDerivs 3.0 协议要点}\label{fig:cca}
 \end{figure}
 
-如果你想支持作者的工作，欢迎前往\href{https://www.czxa.top}{作者的网站}对作者进行打赏。你的支持将会促使作者更加及时地更新这本书。
+如果你想支持作者的工作，欢迎前往\href{https://czxa.top}{作者的网站}对作者进行打赏。你的支持将会促使作者更加及时地更新这本书。
 
 \hypertarget{section-7}{%
 \section{读者反馈}\label{section-7}}
 
-欢迎读者的反馈。你对本书有任何想法，喜欢或者不喜欢什么，请告知我。你可以在下面的评论区里评论，如果你阅读的是 PDF 版本，你可以前往 \href{https://wwww.czxa.top/stata4ds}{Stata for Data Science} 创建 issues。
+欢迎读者的反馈。你对本书有任何想法，喜欢或者不喜欢什么，请告知我。你可以在下面的评论区里评论，如果你阅读的是 PDF 版本，你可以前往 \href{https://wczxa.top/stata4ds}{Stata for Data Science} 创建 issues。
 
 \mainmatter
 
@@ -297,7 +297,7 @@ sysuse auto, clear
 \caption{Stata15.1 do 文档编辑器界面}\label{fig:dofile}
 \end{figure}
 
-事实上，Stata 自带的这个编辑器并不好用，为了提高敲代码的效率，建议使用 Sublime Text3 编辑器。具体配置方法可以参考我的网站文章 \href{https://www.czxa.top/posts/59313/}{Stata安装与Sublime Text3配置教程}。
+事实上，Stata 自带的这个编辑器并不好用，为了提高敲代码的效率，建议使用 Sublime Text3 编辑器。
 
 \begin{figure}
 
@@ -682,8 +682,8 @@ webuse query
 我还可以换个地址：
 
 \begin{lstlisting}
-webuse set "https://www.czxa.top/cuse/c"
-*> (prefix now "https://www.czxa.top/cuse/c")
+webuse set "https://czxa.github.io/cuse/c"
+*> (prefix now "https://czxa.github.io/cuse/c")
 \end{lstlisting}
 
 这个网址是我的数据仓库下的一个名称为c的子文件夹，里面放置着c开头的数据集。设定好网址指向之后就可以调用该指向下的数据集了：
@@ -837,12 +837,12 @@ use ~/Desktop/datasets/grilic_small.dta, clear
 \hypertarget{csv}{%
 \subsection{读入csv数据集}\label{csv}}
 
-csv格式的数据集是逗号分隔的文本文件，可以直接用Excel打开。例如，我想读取 \texttt{pingan.csv} 文件，这个文件下载地址为：\texttt{http://www.czxa.top/mr/pingan.csv} 。
+csv格式的数据集是逗号分隔的文本文件，可以直接用Excel打开。例如，我想读取 \texttt{pingan.csv} 文件，这个文件下载地址为：\texttt{https://czxb.github.io/mr/pingan.csv} 。
 
 Stata的copy命令可以被用来下载文件：
 
 \begin{lstlisting}
-copy "http://www.czxa.top/mr/pingan.csv" pingan.csv, replace
+copy "https://czxb.github.io/mr/pingan.csv" pingan.csv, replace
 \end{lstlisting}
 
 然后你就能在你的工作目录里面发现这个文件了。如果你不清楚你的工作目录在哪里，可以运行下面的命令：
@@ -894,7 +894,7 @@ import delimited /Users/czx/Desktop/pingan.csv, ///
 
 \begin{lstlisting}
 * 首先用copy下载：
-copy "https://www.czxa.top/mr/grilic_small.xls" grilic_small.xls, replace
+copy "https://czxb.github.io/mr/grilic_small.xls" grilic_small.xls, replace
 import excel using grilic_small.xls, clear firstrow
 \end{lstlisting}
 
@@ -1532,7 +1532,7 @@ net install gr0070, from("http://www.stata-journal.com/software/sj17-3") replace
 set scheme plotplain, permanently
 \end{lstlisting}
 
-关于 Stata 绘图主题的选择，可以参考 \href{https://blog.stata.com/2018/10/02/scheming-your-way-to-your-favorite-graph-style/}{Scheming your way to your favorite graph style} 和 \href{https://www.czxa.top/posts/24695/}{Stata的绘图主题}。
+关于 Stata 绘图主题的选择，可以参考 \href{https://blog.stata.com/2018/10/02/scheming-your-way-to-your-favorite-graph-style/}{Scheming your way to your favorite graph style}。
 
 \hypertarget{section-28}{%
 \section{第一步}\label{section-28}}
@@ -1667,7 +1667,7 @@ di wordcount("`r(varlist)'")
 *> 11
 \end{lstlisting}
 
-关于 \texttt{ds} 命令的使用可以参考其帮助文档(help ds) 或者我的博客文章： \href{https://www.czxa.top/posts/44612/\#ds\%E5\%91\%BD\%E4\%BB\%A4\%EF\%BC\%9A\%E5\%88\%97\%E5\%87\%BA\%E7\%AC\%A6\%E5\%90\%88\%E6\%9D\%A1\%E4\%BB\%B6\%E7\%9A\%84\%E5\%8F\%98\%E9\%87\%8F\%E5\%90\%8D\%E7\%A7\%B0}{Stata中的变量名与标签\#ds命令：列出符合条件的变量名称}
+关于 \texttt{ds} 命令的使用可以参考其帮助文档(help ds) 。
 
 最后你还可以使用 c 类返回值 c(N) 和 c(k) 查看当前数据集的观测值个数和变量的个数。关于 c 类返回值的更多内容将会在下一章介绍。
 
@@ -1849,7 +1849,7 @@ leg(order(1 "2seater" ///
 net install colorscheme.pkg, from("https://github.com/matthieugomez/stata-colorscheme/raw/master/")
 \end{lstlisting}
 
-关于这个命令的使用，你可以参考其帮助文档（help colorscheme）或者我的博客文章： \href{https://www.czxa.top/posts/16049/}{colorscheme------调色选色命令}。
+关于这个命令的使用，你可以参考其帮助文档。
 
 我最喜欢的是 \texttt{Paired} 配色方案，如图 \ref{fig:Paired}：
 
@@ -1941,7 +1941,7 @@ leg(order(1 "2seater" ///
 \caption{不同类型汽车排量与燃油效率的关系}\label{fig:hwydispl5}
 \end{figure}
 
-最后 Stata15 在绘图方面引入了一个新特性就是可以为图层设置透明度了！关于透明度的使用可以参考 Stata 官网上的相关介绍和我的博客文章： \href{https://www.czxa.top/posts/44086/}{Stata15绘图的新功能：设置图形的透明度}，图 \ref{fig:hwydispl6}展示了使用透明度的效果：
+最后 Stata15 在绘图方面引入了一个新特性就是可以为图层设置透明度了！关于透明度的使用可以参考 Stata 官网上的相关介绍和我的博客文章： \href{https://czxa.top/posts/44086/}{Stata15绘图的新功能：设置图形的透明度}，图 \ref{fig:hwydispl6}展示了使用透明度的效果：
 
 \begin{lstlisting}
 /* 左图 */
@@ -2248,7 +2248,7 @@ tw bar _freq cut, barwidth(0.8) xlab(, val)
 \caption{钻石切工分布直方图}\label{fig:barcut}
 \end{figure}
 
-contract 命令能够快速的对变量进行计数，详细用法可以参考其帮助文档（help contract）或者我的博客文章： \href{https://www.czxa.top/posts/1170/\#contract\%E5\%91\%BD\%E4\%BB\%A4}{Stata旧笔记整理（八）\#contract命令}。
+contract 命令能够快速的对变量进行计数，详细用法可以参考其帮助文档（help contract）。
 
 contract 命令运行之后会生成一个新的数据集，如表 \ref{tab:cut}：
 
@@ -2913,7 +2913,7 @@ list
 *>    +--------------+
 \end{lstlisting}
 
-关于 egen 函数的更多用法可以运行 \texttt{help\ egen} 参考其帮助文档。也可以参考我的网站文章：\href{https://www.czxa.top/posts/18884/}{Stata中的egen函数}。这篇文章几乎搜集了所有的 egen 函数。
+关于 egen 函数的更多用法可以运行 \texttt{help\ egen} 参考其帮助文档。
 
 \begin{lstlisting}
 clear all
@@ -3567,8 +3567,6 @@ help egen
 search egenmore
 search egenmisc
 \end{lstlisting}
-
-或者参考我的网站博客：\href{https://www.czxa.top/posts/18884/}{Stata中的egen函数}。
 
 \hypertarget{section-55}{%
 \subsection{按多变量分组}\label{section-55}}

@@ -241,8 +241,8 @@ webuse query
 还可以换个地址：
 
 \begin{lstlisting}
-webuse set "https://www.czxa.top/cuse/c"
-*> (prefix now "https://www.czxa.top/cuse/c")
+webuse set "https://czxa.github.io/cuse/c"
+*> (prefix now "https://czxa.github.io/cuse/c")
 \end{lstlisting}
 
 这个网址是我的数据仓库下的一个名称为 c 的子文件夹，里面放置着 c 开头的数据集。设定好网址指向之后就可以调用该指向下的数据集了：
@@ -386,12 +386,12 @@ use ~/Desktop/datasets/grilic_small.dta, clear
 \end{lstlisting}
 
 \subsection{读入csv数据集}
-csv格式的数据集是逗号分隔的文本文件，可以直接用Excel打开。例如，我想读取 \texttt{pingan.csv} 文件，这个文件下载地址为：\texttt{http://www.czxa.top/mr/pingan.csv} 。
+csv格式的数据集是逗号分隔的文本文件，可以直接用Excel打开。例如，我想读取 \texttt{pingan.csv} 文件，这个文件下载地址为：\texttt{https://czxb.github.io/mr/pingan.csv} 。
 
 Stata的copy命令可以被用来下载文件：
 
 \begin{lstlisting}
-copy "http://www.czxa.top/mr/pingan.csv" pingan.csv, replace
+copy "https://czxb.github.io/mr/pingan.csv" pingan.csv, replace
 \end{lstlisting}
 
 然后你就能在你的工作目录里面发现这个文件了。如果你不清楚你的工作目录在哪里，可以运行下面的命令：
@@ -436,7 +436,7 @@ import delimited /Users/czx/Desktop/pingan.csv, ///
 
 \begin{lstlisting}
 * 首先用copy下载：
-copy "https://www.czxa.top/mr/grilic_small.xls" grilic_small.xls, replace
+copy "https://czxb.github.io/mr/grilic_small.xls" grilic_small.xls, replace
 import excel using grilic_small.xls, clear firstrow
 \end{lstlisting}
 
